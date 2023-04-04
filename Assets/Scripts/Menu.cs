@@ -10,7 +10,7 @@ public class Menu : MonoBehaviour
 
     public Text pointsTotalText, ticketsTotalText;
     public Button[] dailyRewardButtons;
-    public Button showDailyRewardButton;
+    public Button dailyRewardButton;
     public Text dailyRewardDayText;
 
     [Header("Design")]
@@ -29,7 +29,6 @@ public class Menu : MonoBehaviour
     public Text categoriesTicketsText;
     public ScrollRect categoryScroll;
     public RectTransform categoryContent;
-    public Toggle onlyRO;
 
     [Header("Settings")]
     public Text versionText;
@@ -46,11 +45,13 @@ public class Menu : MonoBehaviour
     public Transform statsGroup;
 
     private int rewardDayIndex;
-    private List<GameObject> panels;
+    private List<GameObject> allPanels;
 
     public static bool showCategories = false;
     public static Transform lastClickedLevel;
     public static int categoryScrollIndex;
+
+    public GameObject categoryPrefab;
 
     #region BasicEvents
     private void Awake()
@@ -61,7 +62,15 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        panels = new List<GameObject> { mainPanel, catPanel, statsPanel, settingsPanel };
+        allPanels = new List<GameObject> { mainPanel, catPanel, statsPanel, settingsPanel };
+
+        foreach (var category in LogosManager.Manager.Categories)
+        {
+            var catobj = Instantiate(categoryPrefab, categoryContent).GetComponent<CategoryUI>();
+            catobj.currentCategory = category;
+            catobj.Refresh();
+        }
+
 
         #region Set Colors
         foreach (var icon in icons)
@@ -84,6 +93,8 @@ public class Menu : MonoBehaviour
         if (lastScrollIndex > 0)
             lastScrollIndex--;
         lastClickedLevel = categoryContent.GetChild(lastScrollIndex);
+
+
 
         //categoryScroll.verticalNormalizedPosition= PlayerPrefs.GetFloat("CategoryScrollIndex");
 
@@ -109,12 +120,12 @@ public class Menu : MonoBehaviour
         #endregion
 
         #region Daily Reward Check
-        showDailyRewardButton.interactable = false;
+        dailyRewardButton.interactable = false;
 
         DateTime rewardDate = FZSave.TimeDate.Get("nextRewardDate");
         if (rewardDate.Date == DateTime.Now.Date)
         {
-            showDailyRewardButton.interactable = true;
+            dailyRewardButton.interactable = true;
             if (!showCategories)
                 ShowDailyReward();
         }
@@ -123,7 +134,7 @@ public class Menu : MonoBehaviour
             PlayerPrefs.SetInt("todayRewardIndex", 0);
             FZSave.TimeDate.Set("nextRewardDate", DateTime.Now.Date);
 
-            showDailyRewardButton.interactable = true;
+            dailyRewardButton.interactable = true;
             if (!showCategories)
                 ShowDailyReward();
         }
@@ -218,7 +229,7 @@ public class Menu : MonoBehaviour
     public void GetDailyReward()
     {
         FZSave.TimeDate.Set("nextRewardDate", DateTime.Now.Date.AddDays(1));
-        showDailyRewardButton.interactable = false;
+        dailyRewardButton.interactable = false;
 
         if (rewardDayIndex != 2)
             AddToPoints(rewardValues[rewardDayIndex]);
@@ -251,7 +262,7 @@ public class Menu : MonoBehaviour
 
     public void ShowPanel(GameObject newPanel)
     {
-        foreach (var oldPanel in panels)
+        foreach (var oldPanel in allPanels)
         {
             oldPanel.SetActive(false);
         }

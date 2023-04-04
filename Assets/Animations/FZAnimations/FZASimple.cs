@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
-using Random = UnityEngine.Random;
 
-//26.11.22
+//08.03.23
 
 public class FZASimple : MonoBehaviour
 {

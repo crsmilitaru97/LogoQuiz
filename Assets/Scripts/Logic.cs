@@ -407,8 +407,7 @@ public class Logic : MonoBehaviour
 
         if (AdsManager.adStep % adStepToPlay == 0)
         {
-            AdsManager.ShowInterstitial(finishWordAd);
-            finishWordAd.OnAdClosed += HandleOnAdClosed;
+            AdsManager.Instance.ShowAd();
         }
     }
 
@@ -419,8 +418,7 @@ public class Logic : MonoBehaviour
 
         if (AdsManager.adStep % adStepToPlay == 0)
         {
-            finishWordAd = new InterstitialAd("");
-            finishWordAd = AdsManager.LoadInterstitial();
+            AdsManager.Instance.LoadAd();
         }
 
         ShowPanel(null);
@@ -678,16 +676,12 @@ public class Logic : MonoBehaviour
 
     public void GetFreePoints()
     {
-        getPointsAd.Show();
-        getPointsAd.OnUserEarnedReward += HandleUserEarnedReward;
-        getPointsAd.OnAdClosed += HandleRewardedAdClosed;
     }
 
     #region Ads events
     void InitializeRewardedAd()
     {
-        getPointsAd = new RewardedAd(AdsManager.rewarded_getPoints_id);
-        getPointsAd.LoadAd(new AdRequest.Builder().Build());
+
     }
 
     public void HandleOnAdClosed(object sender, EventArgs args)

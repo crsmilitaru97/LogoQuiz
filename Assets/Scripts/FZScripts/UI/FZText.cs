@@ -2,11 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//07.12.22
+//04.04.23
 
 public class FZText : Text
 {
     public float timeInterval = 0.025f;
+    public string textTranslationID;
 
     public void SlowlyUpdateNumberText(int newValue)
     {
