@@ -547,7 +547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -82.5}
+  m_AnchoredPosition: {x: 539.94244, y: -102.5}
   m_SizeDelta: {x: 980, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &36818223
@@ -1012,6 +1012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5e325cb7b2e4d449ded9be20eb7d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsTotalText: {fileID: 2115951338}
+  ticketsTotalText: {fileID: 134488492}
 --- !u!4 &70441733
 Transform:
   m_ObjectHideFlags: 0
@@ -1261,7 +1263,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Swipe
   timeInterval: 0.025
-  textTranslationID: swipe
+  textTranslationID: 
 --- !u!1 &100030171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1374,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &106720325
 MonoBehaviour:
@@ -1873,7 +1875,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Day
   timeInterval: 0.025
-  textTranslationID: day
+  textTranslationID: 
 --- !u!1 &156381568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -247.5}
+  m_AnchoredPosition: {x: 539.94244, y: -287.5}
   m_SizeDelta: {x: 980, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &161481053
@@ -2252,6 +2254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190079124}
   - component: {fileID: 190079123}
+  - component: {fileID: 190079125}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -2293,6 +2296,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190079125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190079122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c0291dde1a5dd41baaaeaccf7eb230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correct: {fileID: 8300000, guid: 0493c073d61cf8c44b2a2c65520fbb84, type: 3}
+  wrong: {fileID: 8300000, guid: 2b74334efbaf14248837293efe2ec185, type: 3}
+  keyPress: {fileID: 8300000, guid: a451c1a580914a7488ab932b9cc3a9e5, type: 3}
 --- !u!1 &198801159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -19.999939}
   m_SizeDelta: {x: 0, y: -760}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &204209269
@@ -2642,8 +2660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3f93d688841044bda122c4df8ad57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsTotalText: {fileID: 2115951338}
-  ticketsTotalText: {fileID: 134488492}
   dailyRewardButtons:
   - {fileID: 1153081413}
   - {fileID: 1255967585}
@@ -2679,7 +2695,6 @@ MonoBehaviour:
   categoryContent: {fileID: 704458166}
   versionText: {fileID: 637337890}
   wordsDoneText: {fileID: 222009133}
-  bonusWordsDoneText: {fileID: 898565913}
   categoriesCompletedText: {fileID: 506371248}
   pressedKeysText: {fileID: 1084232845}
   deletedLettersText: {fileID: 1839352654}
@@ -3093,7 +3108,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Day
   timeInterval: 0.025
-  textTranslationID: day
+  textTranslationID: 
 --- !u!1 &273244661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3794,7 +3809,6 @@ RectTransform:
   - {fileID: 36818222}
   - {fileID: 161481052}
   - {fileID: 1411640335}
-  - {fileID: 534076913}
   - {fileID: 675147129}
   - {fileID: 976727822}
   - {fileID: 1975966190}
@@ -3803,9 +3817,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -680}
-  m_SizeDelta: {x: 0, y: 840}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -259.99997}
+  m_SizeDelta: {x: 0, y: 860}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &367107254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3835,10 +3849,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: 20
+    m_Bottom: 20
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -4625,7 +4639,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Stats
   timeInterval: 0.025
-  textTranslationID: stats
+  textTranslationID: 
 --- !u!1 &462038439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,7 +5092,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Day
   timeInterval: 0.025
-  textTranslationID: day
+  textTranslationID: 
 --- !u!1 &527396193
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,60 +5251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533263869}
   m_CullTransparentMesh: 0
---- !u!1 &534076912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 534076913}
-  - component: {fileID: 534076914}
-  m_Layer: 5
-  m_Name: GameObject (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &534076913
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534076912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 846891835}
-  m_Father: {fileID: 367107253}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -420}
-  m_SizeDelta: {x: 980, y: 120}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &534076914
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534076912}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 6fee96c2c732a59459c5ef88d6fea46c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 6fee96c2c732a59459c5ef88d6fea46c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &540582393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6410,11 +6370,11 @@ RectTransform:
   m_Children:
   - {fileID: 168575171}
   m_Father: {fileID: 367107253}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -540}
+  m_AnchoredPosition: {x: 539.94244, y: -500}
   m_SizeDelta: {x: 980, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &675147130
@@ -7151,7 +7111,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Reset
   timeInterval: 0.025
-  textTranslationID: reset
+  textTranslationID: 
 --- !u!1 &822414959
 GameObject:
   m_ObjectHideFlags: 0
@@ -7397,90 +7357,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &846891834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 846891835}
-  - component: {fileID: 846891837}
-  - component: {fileID: 846891838}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &846891835
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846891834}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 898565915}
-  - {fileID: 1441642214}
-  m_Father: {fileID: 534076913}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 750, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &846891837
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846891834}
-  m_CullTransparentMesh: 0
---- !u!114 &846891838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846891834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d09170b36a4c7544baa725d1c71d794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: aff13b89c4e964140b58fe37545381dd, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Logo-uri bonus ghicite
-  timeInterval: 0.025
-  textTranslationID: 
 --- !u!1 &869226745
 GameObject:
   m_ObjectHideFlags: 0
@@ -7788,86 +7664,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879745910}
   m_CullTransparentMesh: 0
---- !u!1 &898565912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 898565915}
-  - component: {fileID: 898565914}
-  - component: {fileID: 898565913}
-  m_Layer: 5
-  m_Name: Value
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &898565913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898565912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c0602e5a8a2daa4cb78829c5f27f32a, type: 3}
-    m_FontSize: 52
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 70
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: --/--
---- !u!222 &898565914
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898565912}
-  m_CullTransparentMesh: 0
---- !u!224 &898565915
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898565912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 846891835}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 300, y: 0}
-  m_SizeDelta: {x: -600, y: 0}
-  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &924947279
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,11 +7975,11 @@ RectTransform:
   m_Children:
   - {fileID: 290831886}
   m_Father: {fileID: 367107253}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -660}
+  m_AnchoredPosition: {x: 539.94244, y: -640}
   m_SizeDelta: {x: 980, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &976727823
@@ -8523,7 +8319,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Settings
   timeInterval: 0.025
-  textTranslationID: settings
+  textTranslationID: 
 --- !u!1 &1046582996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8821,7 +8617,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Recompensa zilnic\u0103!"
   timeInterval: 0.025
-  textTranslationID: dailyReward
+  textTranslationID: 
 --- !u!1 &1054587886
 GameObject:
   m_ObjectHideFlags: 0
@@ -8906,7 +8702,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: More
   timeInterval: 0.025
-  textTranslationID: more
+  textTranslationID: 
 --- !u!1 &1065057097
 GameObject:
   m_ObjectHideFlags: 0
@@ -9702,25 +9498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2288cb911f5c044bb3a875baeff2e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categoryDetails:
-  - normalColor: {r: 0.6862745, g: 0.65882355, b: 0.9254902, a: 1}
-    darkColor: {r: 0.34901962, g: 0.36078432, b: 0.62352943, a: 1}
-  - normalColor: {r: 0.990566, g: 0.44705883, b: 0.4625756, a: 1}
-    darkColor: {r: 0.9622642, g: 0.2627451, b: 0.21333215, a: 1}
-  - normalColor: {r: 0.7490196, g: 0.58431375, b: 0.81568635, a: 1}
-    darkColor: {r: 0.5803922, g: 0.30980393, b: 0.69411767, a: 1}
-  - normalColor: {r: 0.54901963, g: 0.7686275, b: 0.9176471, a: 1}
-    darkColor: {r: 0.24705884, g: 0.61960787, b: 0.86666673, a: 1}
-  - normalColor: {r: 0.48235297, g: 0.78823537, b: 0.7294118, a: 1}
-    darkColor: {r: 0.13725491, g: 0.64705884, b: 0.54901963, a: 1}
-  - normalColor: {r: 0.5372549, g: 0.882353, b: 0.6862745, a: 1}
-    darkColor: {r: 0.227451, g: 0.8117648, b: 0.47450984, a: 1}
-  - normalColor: {r: 0.9686275, g: 0.8705883, b: 0.4666667, a: 1}
-    darkColor: {r: 0.9450981, g: 0.7803922, b: 0.1137255, a: 1}
-  - normalColor: {r: 0.94117653, g: 0.7137255, b: 0.5058824, a: 1}
-    darkColor: {r: 0.9058824, g: 0.52156866, b: 0.18431373, a: 1}
-  - normalColor: {r: 0.85882354, g: 0.59435076, b: 0.5294118, a: 1}
-    darkColor: {r: 0.7647059, g: 0.30742776, b: 0.21568626, a: 1}
 --- !u!4 &1131825103
 Transform:
   m_ObjectHideFlags: 0
@@ -9899,7 +9676,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Vibration
   timeInterval: 0.025
-  textTranslationID: vibration
+  textTranslationID: 
 --- !u!1 &1148963389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10612,53 +10389,1728 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Categories:
   - name: Cars
-    color: {r: 1, g: 0.25, b: 0.25, a: 1}
+    color: {r: 0.8962264, g: 0.45926926, b: 0.35933605, a: 1}
     Logos:
     - name: Abarth
+      ID: 0
       fullImage: {fileID: 0}
       partImage: {fileID: 0}
       hint: Sports and road cars
-      country: 15
-      about: 
+      country: Italy
       startYear: 1949
       endYear: 0
+      about: 
       isDone: 0
+      isGuess: 0
+      guessed: 0
     - name: Acura
+      ID: 0
       fullImage: {fileID: 0}
       partImage: {fileID: 0}
       hint: Sports and road cars
-      country: 1
-      about: 
+      country: Japan
       startYear: 1986
       endYear: 0
+      about: 
       isDone: 0
+      isGuess: 0
+      guessed: 0
     - name: Aixam
+      ID: 0
       fullImage: {fileID: 0}
       partImage: {fileID: 0}
       hint: Sports and road cars
-      country: 0
-      about: 
+      country: France
       startYear: 1983
       endYear: 0
+      about: 
       isDone: 0
+      isGuess: 0
+      guessed: 0
     - name: Alfa Romeo
+      ID: 0
       fullImage: {fileID: 0}
       partImage: {fileID: 0}
       hint: Sports and road cars
-      country: 15
-      about: 
+      country: Italy
       startYear: 1910
       endYear: 0
+      about: 
       isDone: 0
+      isGuess: 0
+      guessed: 0
     - name: Alpina
+      ID: 0
       fullImage: {fileID: 0}
       partImage: {fileID: 0}
       hint: Sports and road cars
-      country: 4
-      about: 
+      country: Germany
       startYear: 1965
       endYear: 0
+      about: 
       isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Alpine
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 1955
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: AMG
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1967
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Apal
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Belgium
+      startYear: 1961
+      endYear: 1998
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Apollo
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 2004
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Arash
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1999
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Arctic Cat
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1960
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: ARO
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Romania
+      startYear: 1957
+      endYear: 2006
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Arrinera
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Poland
+      startYear: 2008
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Aston Martin
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1913
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Atalanta
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 2011
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Auburn
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1900
+      endYear: 1937
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Audi
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1909
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Austin
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1905
+      endYear: 1952
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: AWZ
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1955
+      endYear: 1958
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bajaj
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: India
+      startYear: 1945
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Barkas
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1958
+      endYear: 1990
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bentley
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1919
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Berkeley
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1960
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bertone
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1912
+      endYear: 2014
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bitter
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1971
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: BMW
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1916
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Borgward
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1919
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bowler
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1985
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Brabus
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1977
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Brilliance
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: China
+      startYear: 1992
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Bugatti
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 1909
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Buick
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1899
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: BYD
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: China
+      startYear: 2003
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Cadillac
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1902
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Chevrolet
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1911
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Chrysler
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1925
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Citroen
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 1919
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Corvette
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1953
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Cupra
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Spain
+      startYear: 1985
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Dacia
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Romania
+      startYear: 1966
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Daewoo
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: South Korea
+      startYear: 1967
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: DAF
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Netherlands
+      startYear: 1928
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Daihatsu
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1951
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Datsun
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1931
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: DMC
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1975
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Dodge
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1900
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: DS
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 2009
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Ferrari
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1939
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Fiat
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 2007
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Fisker
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 2007
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Ford
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1903
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Genesis
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: South Korea
+      startYear: 2015
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: GMC
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1911
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Holden
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Australia
+      startYear: 1856
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Honda
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1963
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: HSV
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Australia
+      startYear: 1987
+      endYear: 2020
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Hummer
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1992
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Hyundai
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: South Korea
+      startYear: 1967
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Isuzu
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1934
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Iveco
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Netherlands
+      startYear: 1975
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Jaguar
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1935
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Jeep
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1943
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Kia
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: South Korea
+      startYear: 1944
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Koenigsegg
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 1994
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lada
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Russia
+      startYear: 1973
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lamborghini
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1963
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lancia
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1906
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Land Rover
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1948
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lexus
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1989
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lotus
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1948
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lucid
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 2007
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Lynk&Co
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 2016
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: MAN
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1758
+      endYear: 2021
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mansory
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1989
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Maserati
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1914
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Maybach
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1909
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mazda
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1920
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: McLaren
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1963
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mercedes Benz
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1926
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mercury
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1938
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mini
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1959
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mitsubishi
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1870
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Mustang
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1964
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Nismo
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1984
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Nissan
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1933
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Opel
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1862
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Pagani
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Italy
+      startYear: 1992
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Peugeot
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 1810
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Polestar
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 1996
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Porsche
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1931
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Renault
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: France
+      startYear: 1899
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Rivian
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 2009
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Rolls-Royce
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1998
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: RUF
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1939
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Saab
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 1945
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Saleen
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1983
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Saturn
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 1985
+      endYear: 2010
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Scania
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 1911
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Scion
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 2003
+      endYear: 2016
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: SEAT
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Spain
+      startYear: 1950
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Skoda
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Czech Republic
+      startYear: 1925
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Smart
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: China
+      startYear: 1994
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: SsangYong
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: South Korea
+      startYear: 1954
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Subaru
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1953
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Tata
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: India
+      startYear: 1868
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Tesla
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: US
+      startYear: 2003
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Toyota
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Japan
+      startYear: 1937
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Trabant
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1957
+      endYear: 1991
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: TVR
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1946
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Vauxhall
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: UK
+      startYear: 1857
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Volkswagen
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Germany
+      startYear: 1937
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Volvo
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Sports and road cars
+      country: Sweden
+      startYear: 1927
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    priceToUnlock: 0
+    wordsDoneCount: 0
+    randomized: 0
+    completed: 0
+    locked: 1
+  - name: Drinks
+    color: {r: 0.3607843, g: 0.75111294, b: 0.8980392, a: 1}
+    Logos:
+    - name: 7up
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 
+      country: US
+      startYear: 1929
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Absolut
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 
+      country: Sweden
+      startYear: 1879
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    priceToUnlock: 0
+    wordsDoneCount: 0
+    randomized: 0
+    completed: 0
+    locked: 1
+  - name: Software
+    color: {r: 0.27612138, g: 0.8018868, b: 0.43706238, a: 1}
+    Logos:
+    - name: Activision
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 'Computer games '
+      country: US
+      startYear: 1979
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Android
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: OS designed for various device
+      country: US
+      startYear: 2008
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Canva
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Graphics service
+      country: Australia
+      startYear: 2013
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Chrome
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 'Web browser '
+      country: US
+      startYear: 2008
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Discord
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Messaging service
+      country: 
+      startYear: 2015
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Evernote
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 'Productivity app '
+      country: US
+      startYear: 2008
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Excel
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Microsoft software
+      country: US
+      startYear: 1987
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: FaceTime
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Live communication
+      country: US
+      startYear: 2010
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Internet Explorer
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Web browser
+      country: US
+      startYear: 1995
+      endYear: 2022
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Java
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 'Programming language '
+      country: US
+      startYear: 1995
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Linux
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Free OS
+      country: US
+      startYear: 1991
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: macOS
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Apple OS
+      country: US
+      startYear: 2001
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Microsoft
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Multinational company
+      country: US
+      startYear: 1975
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Word
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Popular text editor
+      country: US
+      startYear: 1983
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Firefox
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Web browser
+      country: US
+      startYear: 2002
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Outlook
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Mail management app
+      country: US
+      startYear: 1996
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Photoshop
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Creating and editing graphic
+      country: US
+      startYear: 1990
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Procreate
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Creating and editing graphic
+      country: Tasmania
+      startYear: 2011
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Safari
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Web browser
+      country: US
+      startYear: 2003
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Shazam
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Instant music recognition app
+      country: UK
+      startYear: 1999
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Skype
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Voice communication program
+      country: Luxembourg
+      startYear: 2003
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Slack
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Instant messaging system
+      country: US
+      startYear: 2013
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Ubuntu
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Free OS
+      country: US
+      startYear: 2004
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Unity
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Video games engine
+      country: US
+      startYear: 2004
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: uTorrent
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: 'BitTorrent client '
+      country: US
+      startYear: 2005
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Vine
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Social network
+      country: US
+      startYear: 2013
+      endYear: 2017
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Wi-Fi
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Wireless networking protocols
+      country: US
+      startYear: 1997
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
+    - name: Zoom
+      ID: 0
+      fullImage: {fileID: 0}
+      partImage: {fileID: 0}
+      hint: Video communications services
+      country: US
+      startYear: 2011
+      endYear: 0
+      about: 
+      isDone: 0
+      isGuess: 0
+      guessed: 0
     priceToUnlock: 0
     wordsDoneCount: 0
     randomized: 0
@@ -11767,7 +13219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -345}
+  m_AnchoredPosition: {x: 539.94244, y: -405}
   m_SizeDelta: {x: 980, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411640336
@@ -11892,7 +13344,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Language
   timeInterval: 0.025
-  textTranslationID: language
+  textTranslationID: 
 --- !u!1 &1433357974
 GameObject:
   m_ObjectHideFlags: 0
@@ -12096,82 +13548,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441602338}
-  m_CullTransparentMesh: 0
---- !u!1 &1441642213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1441642214}
-  - component: {fileID: 1441642216}
-  - component: {fileID: 1441642215}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1441642214
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441642213}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 846891835}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1441642215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441642213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8394836, g: 1, b: 0.39215684, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a7d4055cd6404aa43a1044cf94ae0058, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1441642216
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441642213}
   m_CullTransparentMesh: 0
 --- !u!1 &1442291041
 GameObject:
@@ -12534,7 +13910,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Day
   timeInterval: 0.025
-  textTranslationID: day
+  textTranslationID: 
 --- !u!1 &1527935447
 GameObject:
   m_ObjectHideFlags: 0
@@ -14383,7 +15759,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Sound
   timeInterval: 0.025
-  textTranslationID: sound
+  textTranslationID: 
 --- !u!1 &1869422506
 GameObject:
   m_ObjectHideFlags: 0
@@ -14774,7 +16150,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Day
   timeInterval: 0.025
-  textTranslationID: day
+  textTranslationID: 
 --- !u!1 &1950165076
 GameObject:
   m_ObjectHideFlags: 0
@@ -14856,7 +16232,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Categories
   timeInterval: 0.025
-  textTranslationID: categories
+  textTranslationID: 
 --- !u!1 &1956636388
 GameObject:
   m_ObjectHideFlags: 0
@@ -14968,11 +16344,11 @@ RectTransform:
   m_Children:
   - {fileID: 1169343566}
   m_Father: {fileID: 367107253}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 539.5889, y: -780}
+  m_AnchoredPosition: {x: 539.94244, y: -780}
   m_SizeDelta: {x: 980, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1975966191
@@ -15703,37 +17079,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014986111}
   m_CullTransparentMesh: 1
---- !u!1 &2023805432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2023805434}
-  m_Layer: 0
-  m_Name: Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!4 &2023805434
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023805432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2028614368
 GameObject:
   m_ObjectHideFlags: 0

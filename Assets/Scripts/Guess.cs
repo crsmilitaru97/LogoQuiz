@@ -16,7 +16,7 @@ public class Guess : MonoBehaviour
         Button button = GetComponent<Button>();
         GuessManager guessManager = GetComponentInParent<GuessManager>();
 
-        if (value.ToUpperInvariant() == Logic.currentWord.wordText.ToUpperInvariant())
+        if (value.ToUpperInvariant() == LogosManager.currentLogo.name.ToUpperInvariant())
         {
             FZColors.ChangeButtonColors(button, button.colors.normalColor, guessManager.trueColor);
             StartCoroutine(WaitToFinish(true));
@@ -32,6 +32,6 @@ public class Guess : MonoBehaviour
         GetComponent<Button>().interactable = false;
         yield return new WaitForSecondsRealtime(0.4f);
 
-        Logic.instance.SolveWord(solved);
+        Logic.Instance.SolveWord(solved);
     }
 }

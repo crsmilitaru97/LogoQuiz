@@ -69,12 +69,6 @@ public class Settings : MonoBehaviour
     public void ClearPrefs()
     {
         PlayerPrefs.DeleteAll();
-
-        foreach (var category in WordsDB.categoriesRO)
-        {
-            category.randomized = false;
-        }
-
         SceneManager.LoadScene(0);
     }
 }

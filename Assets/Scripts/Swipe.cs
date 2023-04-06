@@ -55,11 +55,11 @@ public class Swipe : MonoBehaviour
 
     void OnSwipeLeft()
     {
-        Logic.instance.Skip();
+        Logic.Instance.Skip();
     }
 
     void OnSwipeRight()
     {
-        Logic.instance.SkipBack();
+        Logic.Instance.SkipBack();
     }
 }

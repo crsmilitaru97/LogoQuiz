@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LogoUI : MonoBehaviour
@@ -20,5 +18,6 @@ public class LogoUI : MonoBehaviour
     public void SelectLogo()
     {
         LogosManager.currentLogo = logo;
+        FZCanvas.Instance.FadeLoadScene(2, Color.black);
     }
 }

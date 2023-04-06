@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static LogosManager;
 
 public class Menu : MonoBehaviour
 {
     public static Menu instance;
 
-    public Text pointsTotalText, ticketsTotalText;
     public Button[] dailyRewardButtons;
     public Button dailyRewardButton;
     public Text dailyRewardDayText;
@@ -35,7 +35,6 @@ public class Menu : MonoBehaviour
 
     [Header("Stats")]
     public Text wordsDoneText;
-    public Text bonusWordsDoneText;
     public Text categoriesCompletedText;
     public Text pressedKeysText;
     public Text deletedLettersText;
@@ -52,6 +51,7 @@ public class Menu : MonoBehaviour
     public static int categoryScrollIndex;
 
     public GameObject categoryPrefab;
+    readonly int[] rewardValues = { 15, 25, 3, 50, 75 };
 
     #region BasicEvents
     private void Awake()
@@ -62,6 +62,8 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
+
         allPanels = new List<GameObject> { mainPanel, catPanel, statsPanel, settingsPanel };
 
         foreach (var category in LogosManager.Manager.Categories)
@@ -70,7 +72,6 @@ public class Menu : MonoBehaviour
             catobj.currentCategory = category;
             catobj.Refresh();
         }
-
 
         #region Set Colors
         foreach (var icon in icons)
@@ -112,13 +113,6 @@ public class Menu : MonoBehaviour
         }
         #endregion
 
-        #region Saves
-        Values.UpdateTextWithValue(categoriesTicketsText, Values.tickets);
-
-        pointsTotalText.text = Values.points.ToString();
-        ticketsTotalText.text = Values.tickets.ToString();
-        #endregion
-
         #region Daily Reward Check
         dailyRewardButton.interactable = false;
 
@@ -140,27 +134,29 @@ public class Menu : MonoBehaviour
         }
         #endregion
 
+        Values.UpdateTextWithValue(categoriesTicketsText, Values.tickets);
+
         if (showCategories)
             ShowPanel(catPanel);
 
         #region Stats and saves
         // Words done & categories completed
         int wordsDone = 0, wordsTotal = 0, completedCategories = 0;
-        foreach (Category category in WordsDB.categoriesRO)
+        foreach (Category category in LogosManager.Manager.Categories)
         {
-            wordsTotal += category.words.Length;
+            wordsTotal += category.Logos.Length;
             int thisCategoryWordsDone = 0;
-            foreach (Word word in category.words)
+            foreach (Logo logo in category.Logos)
             {
-                if (FZSave.Bool.Get($"{category.categoryName}_{word.wordText}_done", false))
+                if (FZSave.Bool.Get($"{category.name}_{logo.name}_done", false))
                 {
-                    word.isDone = true;
+                    logo.isDone = true;
                     thisCategoryWordsDone++;
                 }
                 else
-                    word.isDone = false;
+                    logo.isDone = false;
             }
-            if (thisCategoryWordsDone == category.words.Length)
+            if (thisCategoryWordsDone == category.Logos.Length)
             {
                 category.completed = true;
                 completedCategories++;
@@ -170,32 +166,11 @@ public class Menu : MonoBehaviour
             category.wordsDoneCount = thisCategoryWordsDone;
         }
         wordsDoneText.text = wordsDone.ToString() + "/" + wordsTotal.ToString();
-        categoriesCompletedText.text = completedCategories.ToString() + "/" + WordsDB.categoriesRO.Length.ToString();
+        categoriesCompletedText.text = completedCategories.ToString() + "/" + LogosManager.Manager.Categories.Length.ToString();
         fillWordsDone.fillAmount = (float)wordsDone / wordsTotal;
         procentWordsDone.text = (Mathf.Round((float)wordsDone / wordsTotal * 100)).ToString() + "%";
-        fillCategoriesDone.fillAmount = (float)completedCategories / WordsDB.categoriesRO.Length;
-        procentCategoriesDone.text = (Mathf.Round((float)completedCategories / WordsDB.categoriesRO.Length * 100)).ToString() + "%";
-
-        // Bonus words done
-        int bonusWordsGuessed = 0, bonusWordsTotal = 0;
-        foreach (Category category in WordsDB.categoriesRO)
-        {
-            if (category.bonusWords != null)
-            {
-                bonusWordsTotal += category.bonusWords.Length;
-                foreach (Word bonusWord in category.bonusWords)
-                {
-                    if (FZSave.Bool.Get($"{category.categoryName}_{bonusWord.wordText}_guessed", false))
-                    {
-                        bonusWord.guessed = true;
-                        bonusWordsGuessed++;
-                    }
-                    else
-                        bonusWord.guessed = false;
-                }
-            }
-        }
-        bonusWordsDoneText.text = bonusWordsGuessed.ToString();
+        fillCategoriesDone.fillAmount = (float)completedCategories / LogosManager.Manager.Categories.Length;
+        procentCategoriesDone.text = (Mathf.Round((float)completedCategories / LogosManager.Manager.Categories.Length * 100)).ToString() + "%";
 
         // More
         pressedKeysText.text = Values.pressedKeys.ToString();
@@ -208,7 +183,7 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (catPanel.activeSelf)
+            if (!mainPanel.activeSelf)
                 ShowPanel(mainPanel);
         }
     }
@@ -224,17 +199,15 @@ public class Menu : MonoBehaviour
         dailyRewardPanel.SetActive(true);
     }
 
-    int[] rewardValues = { 15, 25, 3, 50, 75 };
-
     public void GetDailyReward()
     {
         FZSave.TimeDate.Set("nextRewardDate", DateTime.Now.Date.AddDays(1));
         dailyRewardButton.interactable = false;
 
         if (rewardDayIndex != 2)
-            AddToPoints(rewardValues[rewardDayIndex]);
+            Values.Instance.AddToPoints(rewardValues[rewardDayIndex]);
         else
-            AddToTickets(rewardValues[rewardDayIndex]);
+            Values.Instance.AddToTickets(rewardValues[rewardDayIndex]);
 
         if (rewardDayIndex < 4)
             rewardDayIndex += 1;
@@ -244,20 +217,6 @@ public class Menu : MonoBehaviour
         PlayerPrefs.SetInt("todayRewardIndex", rewardDayIndex);
 
         dailyRewardPanel.SetActive(false);
-    }
-
-    private void AddToPoints(int value)
-    {
-        Values.points += value;
-        pointsTotalText.GetComponentInChildren<FZText>().SlowlyUpdateNumberText(Values.points);
-        PlayerPrefs.SetInt("points", Values.points);
-    }
-
-    private void AddToTickets(int value)
-    {
-        Values.tickets += value;
-        ticketsTotalText.GetComponent<FZText>().SlowlyUpdateNumberText(Values.tickets);
-        PlayerPrefs.SetInt("tickets", Values.tickets);
     }
 
     public void ShowPanel(GameObject newPanel)
@@ -305,9 +264,4 @@ public class Menu : MonoBehaviour
         }
     }
     #endregion
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }

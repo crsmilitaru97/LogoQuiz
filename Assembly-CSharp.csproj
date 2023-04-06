@@ -59,6 +59,7 @@
     <Compile Include="Assets\Animations\FZAnimations\FZAFadeShow.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZCanvas.cs" />
     <Compile Include="Assets\Scripts\Swipe.cs" />
+    <Compile Include="Assets\Scripts\Sounds.cs" />
     <Compile Include="Assets\Scripts\PreGame.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZAudio.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZMath.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\LogosManager.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Texts.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZLoading.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZPosition.cs" />
     <Compile Include="Assets\Scripts\FZScripts\FZTranslation.cs" />
@@ -112,8 +114,9 @@
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Ump.Unity.dll" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Ump.dll" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll" />
-    <None Include="Assets\GoogleMobileAds\GoogleMobileAds_version-7.4.1_manifest.txt" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Android.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds_version-8.0.0_manifest.txt" />
+    <None Include="Assets\FZBlur\FZBlur.shader" />
     <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Ump.Android.dll" />
   </ItemGroup>
   <ItemGroup>

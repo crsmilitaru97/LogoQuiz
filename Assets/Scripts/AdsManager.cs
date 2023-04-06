@@ -1,23 +1,19 @@
-﻿
-
-using GoogleMobileAds.Api;
+﻿using GoogleMobileAds.Api;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AdsManager : MonoBehaviour
-{    
+{
     public static string interstitial_wordFinish_id = "ca-app-pub-8089995158636506/3313117330";
     public static string rewarded_getPoints_id = "ca-app-pub-8089995158636506/1317509388";
+    public static string banner_id = "ca-app-pub-8089995158636506/7202080827";
     //AppID = "ca-app-pub-8089995158636506~2269937900";
 
-    public static InterstitialAd wordFinish;
-    public static RewardedAd getPoints;
-
-    public static AdsManager instance;
-    public static int adStep = 1;
-
+    private InterstitialAd wordFinish;
+    private RewardedAd getPoints;
+    private BannerView bannerView;
 
     public static AdsManager Instance;
     public static bool shouldShowAd = false;
@@ -108,7 +104,6 @@ public class AdsManager : MonoBehaviour
     }
     #endregion
 
-    /*
     #region Banner
     public void CreateBannerView()
     {
@@ -119,7 +114,7 @@ public class AdsManager : MonoBehaviour
 
         AdSize adaptiveSize = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
 
-        bannerView = new BannerView(banner_ID, adaptiveSize, AdPosition.Bottom);
+        bannerView = new BannerView(banner_id, adaptiveSize, AdPosition.Bottom);
     }
 
     public void LoadBannerAd()
@@ -144,7 +139,6 @@ public class AdsManager : MonoBehaviour
         }
     }
     #endregion
-    */
 
     #region Reward
     public void LoadRewardedAd()

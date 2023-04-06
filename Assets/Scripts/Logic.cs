@@ -4,37 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static LogosManager;
 
 public class Logic : MonoBehaviour
 {
-    public static Logic instance;
+    public static Logic Instance;
+    public GameObject finalKeyPrefab;
 
     public GameObject[] panels;
     public Image[] icons, specialButtons;
-    public AudioSource asFinish, asNo;
     public Image finalWordBar, lettersBar;
     public Image image, imageFinal;
     public Image flag;
-    public Text[] specialTexts;
 
-    public Text wordFinal, aboutFinal, yearsFinal;
+    public Text wordFinal, yearsFinal;
     public Text hintText;
-    public Text pointsTotalText;
-    public Text ticketsTotalText;
 
-    public GameObject finalWordParent;
+    public Transform finalWordParent;
     public GameObject nextPanel;
     public GameObject quitPanel;
     public GameObject helpPanel;
     public GameObject rewardConfirmMessage;
 
-    public GameObject bonusLevelText;
     public Text perfectText;
 
     public GameObject freePointsMessage;
     public GameObject categoryFinalPanel;
 
-    public Image rightIndicator, leftIndicator;
+    public FZButton rightIndicator, leftIndicator;
 
     [Header("Help")]
     public Button helpButton;
@@ -42,141 +39,177 @@ public class Logic : MonoBehaviour
     public Button revealButton;
     public Button solveButton;
 
-    private readonly List<Key> keys = new List<Key>();
-    private readonly List<Key> finalKeys = new List<Key>();
-
-    public static Word[] currentWords;
-    public static Word currentWord;
-    public static Category currentCategory;
-    public static Key currentFinalKey;
-
     private string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZȘȚÂĂÎ";
-    private static readonly Vector2 keySize = new Vector2(96, 96);
-    private Vector2 keyZoomSize = new Vector2(keySize.x + 20, keySize.y + 20);
     private int currentIndexInWord;
-    private const int adStepToPlay = 3;
 
     private bool isHintShown;
     private bool isLettersRevealed;
 
-    public GameObject groupGuess, groupWrite;
+    public GameObject groupWrite;
 
-    private InterstitialAd finishWordAd;
-    private RewardedAd getPointsAd;
+    [HideInInspector]
+    public List<Key> Keys = new List<Key>();
+    [HideInInspector]
+    public List<Key> FinalKeys = new List<Key>();
+
+    public static Key currentFinalKey;
 
     #region BasicEvents
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
     }
 
     private void Start()
     {
-        InitializeRewardedAd();
-        ticketsTotalText.text = Values.tickets.ToString();
-        SelectCategory();
+        AdsManager.Instance.LoadAd();
 
-        Color.RGBToHSV(currentCategory.darkColor, out float h, out float s, out float v);
+        #region Colors
+        finalWordBar.color = currentCategory.color;
+        lettersBar.color = currentCategory.color;
+        foreach (var icon in icons)
+        {
+            icon.color = currentCategory.color;
+        }
+        foreach (var icon in specialButtons)
+        {
+            icon.color = currentCategory.color;
+        }
+        Color.RGBToHSV(currentCategory.color, out float h, out float s, out float v);
         s /= 3;
+
+
+        #endregion
 
         for (int i = 0; i < lettersBar.transform.childCount; i++)
         {
-            keys.Add(lettersBar.transform.GetChild(i).GetComponent<Key>());
-        }
-        for (int i = 0; i < finalWordParent.transform.childCount; i++)
-        {
-            finalKeys.Add(finalWordParent.transform.GetChild(i).GetComponent<Key>());
-            //var newColor = finalWordParent.transform.GetChild(i).GetComponent<Button>().colors;
-            //newColor.disabledColor = Color.HSVToRGB(h, s, v);
-            //finalWordParent.transform.GetChild(i).GetComponent<Button>().colors = newColor;
-
-            FZColors.ChangeButtonColors(finalWordParent.transform.GetChild(i).GetComponent<Button>(), Color.white, currentCategory.normalColor);
+            Keys.Add(lettersBar.transform.GetChild(i).GetComponent<Key>());
         }
 
-        Values.UpdateTextWithValue(pointsTotalText, Values.points);
+        //for (int i = 0; i < finalWordParent.transform.childCount; i++)
+        //{
+        //    finalKeys.Add(finalWordParent.transform.GetChild(i).GetComponent<Key>());
+        //    //var newColor = finalWordParent.transform.GetChild(i).GetComponent<Button>().colors;
+        //    //newColor.disabledColor = Color.HSVToRGB(h, s, v);
+        //    //finalWordParent.transform.GetChild(i).GetComponent<Button>().colors = newColor;
 
-        groupGuess.GetComponent<Image>().color = currentCategory.normalColor;
+        //    FZColors.ChangeButtonColors(finalWordParent.transform.GetChild(i).GetComponent<Button>(), Color.white, currentCategory.color);
+        //}
 
-        LoadNewWord();
+
+        SetLogo();
         CheckPoints();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             ShowPanel(quitPanel);
+        }
     }
     #endregion
 
-    private void TryGetNewWordIndex_Forward(int currentIndex)
+    private Logo GetNewLogo_Forward()
     {
         // x -> final
-        for (int i = currentIndex + 1; i < currentCategory.words.Length; i++)
+        for (int i = currentLogo.ID + 1; i < currentCategory.Logos.Length; i++)
         {
-            if (currentCategory.words[i].isDone == false)
+            if (currentCategory.Logos[i].isDone == false)
             {
-                Values.currentWordIndex = i;
-                return;
+                currentLogo = currentCategory.Logos[i];
+                return currentLogo;
             }
         }
 
         // @ 0 -> x
-        for (int i = 0; i < currentIndex; i++)
+        for (int i = 0; i < currentLogo.ID; i++)
         {
-            if (currentCategory.words[i].isDone == false)
+            if (currentCategory.Logos[i].isDone == false)
             {
-                Values.currentWordIndex = i;
-                return;
+                currentLogo = currentCategory.Logos[i];
+                return currentLogo;
             }
         }
 
-        CategoryFullyDone();
+        return null;
     }
 
-    private void TryGetNewWordIndex_Backward(int currentIndex)
+    private Logo GetNewLogo_Backward()
     {
         // x -> 0
-        for (int i = currentIndex - 1; i >= 0; i--)
+        for (int i = currentLogo.ID - 1; i >= 0; i--)
         {
-            if (currentCategory.words[i].isDone == false)
+            if (currentCategory.Logos[i].isDone == false)
             {
-                Values.currentWordIndex = i;
-                return;
+                currentLogo = currentCategory.Logos[i];
+                return currentLogo;
             }
         }
+
+        return null;
     }
 
     private void CategoryFullyDone()
     {
         ShowPanel(categoryFinalPanel);
-
-        imageFinal.gameObject.SetActive(false);
-        imageFinal.gameObject.SetActive(true);
+        imageFinal.gameObject.ReEnable();
     }
 
-    private void SetWord()
+    private void CleanAfterLogo()
     {
+        hintText.transform.parent.gameObject.SetActive(false);
+
+        foreach (var key in Keys)
+        {
+            key.value = string.Empty;
+            key.GetComponent<Button>().interactable = true;
+            key.GetComponentInChildren<Text>().text = string.Empty;
+            key.gameObject.SetActive(true);
+        }
+
+        foreach (var key in FinalKeys)
+        {
+            Destroy(key.gameObject);
+        }
+        FinalKeys.Clear();
+    }
+
+    private void SetLogo()
+    {
+        CleanAfterLogo();
+        int ix = 0;
+        foreach (var letter in currentLogo.name)
+        {
+            var key = Instantiate(finalKeyPrefab, finalWordParent).GetComponent<Key>();
+            key.neededValue = letter.ToString().ToUpperInvariant();
+            key.ID = ix;
+            ix++;
+            key.RefreshUI();
+
+            FinalKeys.Add(key);
+        }
+
+        currentFinalKey = FinalKeys[0];
+        currentFinalKey.Highlight();
+
+
         isHintShown = false;
         isLettersRevealed = false;
         CheckPoints();
 
         bool isFirstWord = true;
-        for (int i = 0; i < Values.currentWordIndex; i++)
+        for (int i = 0; i < currentLogo.ID; i++)
         {
-            if (!currentCategory.words[i].isDone)
+            if (!currentCategory.Logos[i].isDone)
             {
                 isFirstWord = false;
                 break;
             }
         }
-        if (!currentWord.isGuess)
-            leftIndicator.gameObject.SetActive(!isFirstWord);
-        else
-        {
-            rightIndicator.gameObject.SetActive(false);
-            leftIndicator.gameObject.SetActive(false);
-        }
+        leftIndicator.interactable = !isFirstWord;
+        rightIndicator.interactable = true;
 
         perfectText.gameObject.SetActive(false);
 
@@ -185,78 +218,36 @@ public class Logic : MonoBehaviour
 
         nextPanel.SetActive(false);
 
-        Refresh();
+        image.sprite = currentLogo.partImage;
 
-        image.sprite = Resources.Load<Sprite>($"Logos/{currentCategory.categoryName}/{currentWord.wordText.ToLowerInvariant()}");
-
-        if (currentWord.isGuess)
-        {
-            groupWrite.SetActive(false);
-            SetGuessGroup();
-        }
-        else
-        {
-            groupGuess.SetActive(false);
-            SetWriteGroup();
-        }
+        SetWriteGroup();
 
         try
         {
             flag.gameObject.SetActive(true);
-            flag.sprite = Resources.Load<Sprite>($"Flags/{currentWord.country.ToLowerInvariant()}");
+            flag.sprite = Resources.Load<Sprite>($"Flags/{currentLogo.country.ToString().ToLowerInvariant()}");
         }
         catch (Exception)
         {
             flag.gameObject.SetActive(false);
         }
 
-        hintButton.gameObject.SetActive(!string.IsNullOrEmpty(currentWord.hint));
-        revealButton.gameObject.SetActive(!currentWord.isGuess);
-    }
-
-    private void SetGuessGroup()
-    {
-        bonusLevelText.SetActive(true);
-        helpButton.gameObject.SetActive(false);
-        groupGuess.SetActive(true);
-
-        for (int i = 0; i < groupGuess.transform.childCount; i++)
-        {
-            var guessObj = groupGuess.transform.GetChild(i).gameObject;
-            List<string> variants = currentWord.variants;
-            variants.Add(currentWord.wordText);
-
-            if (i < variants.Count)
-            {
-                guessObj.GetComponent<Guess>().value = variants[i];
-                guessObj.SetActive(true);
-                guessObj.GetComponent<Guess>().RenderValue();
-            }
-            else
-            {
-                guessObj.transform.GetChild(i).gameObject.SetActive(false);
-            }
-        }
+        hintButton.gameObject.SetActive(!string.IsNullOrEmpty(currentLogo.hint));
+        revealButton.gameObject.SetActive(!currentLogo.isGuess);
     }
 
     private void SetWriteGroup()
     {
-        bonusLevelText.SetActive(false);
         helpButton.gameObject.SetActive(true);
         groupWrite.SetActive(true);
 
         finalWordBar.gameObject.SetActive(false);
         finalWordBar.gameObject.SetActive(true);
 
-        var pos = finalWordParent.GetComponent<RectTransform>();
-        pos.localPosition = new Vector2((finalKeys.Count - currentWord.wordText.Length) * (75 / 2), pos.localPosition.y);
-
-        List<string> symbols = new List<string> { "!", "'", "-", ".", " " };
-
         List<string> letters = new List<string>();
-        foreach (var letter in currentWord.wordText)
+        foreach (var letter in currentLogo.name)
         {
-            if (!symbols.Contains(letter.ToString()))
+            if (!Values.Symbols.Contains(letter.ToString()))
                 letters.Add(letter.ToString());
         }
         List<char> choosedChars = new List<char>();
@@ -272,49 +263,30 @@ public class Logic : MonoBehaviour
         }
         choosedChars.Clear();
 
-        for (int i = 0; i < finalKeys.Count; i++)
-        {
-            if (i < currentWord.wordText.Length)
-            {
-                finalKeys[i].isSymbol = (symbols.Contains(currentWord.wordText[i].ToString()));
+        //for (int i = 0; i < finalKeys.Count; i++)
+        //{
+        //    if (i < currentLogo.name.Length)
+        //    {
+        //        finalKeys[i].isSymbol = (symbols.Contains(currentLogo.name[i].ToString()));
 
-                if (finalKeys[i].isSymbol)
-                    finalKeys[i].value = currentWord.wordText[i].ToString();
+        //        if (finalKeys[i].isSymbol)
+        //            finalKeys[i].value = currentLogo.name[i].ToString();
 
-                finalKeys[i].RenderValue();
-            }
-            else
-                finalKeys[i].gameObject.SetActive(false);
-        }
+        //        finalKeys[i].RenderValue();
+        //    }
+        //    else
+        //        finalKeys[i].gameObject.SetActive(false);
+        //}
 
-        HighlightKey(0);
+        //HighlightKey(0);
 
         letters.Sort();
 
-        for (int i = 0; i < keys.Count; i++)
+        for (int i = 0; i < Keys.Count; i++)
         {
-            keys[i].value = letters[i].ToString().ToUpper();
-            keys[i].GetComponentInChildren<Text>().text = keys[i].value;
+            Keys[i].value = letters[i].ToString().ToUpper();
+            Keys[i].GetComponentInChildren<Text>().text = Keys[i].value;
         }
-    }
-
-    public void LoadNewWord()
-    {
-        currentWord = currentWords[Values.currentWordIndex];
-        SetWord();
-    }
-
-    public Word TryGetBonusWord()
-    {
-        foreach (var item in currentCategory.bonusWords)
-        {
-            if (item.isDone == false)
-                return item;
-        }
-        return null;
-    }
-    public void GetRewardOK()
-    {
     }
 
     public void ShowPanel(GameObject panel)
@@ -338,169 +310,86 @@ public class Logic : MonoBehaviour
             freePointsMessage.SetActive(false);
     }
 
-    public void Refresh()
-    {
-        hintText.text = string.Empty;
-
-        foreach (var key in keys)
-        {
-            key.value = string.Empty;
-            key.GetComponent<Button>().interactable = true;
-            key.GetComponentInChildren<Text>().text = string.Empty;
-            key.gameObject.SetActive(true);
-        }
-        foreach (var key in finalKeys)
-        {
-            key.GetComponent<Image>().enabled = true;
-            key.isSymbol = false;
-            key.value = string.Empty;
-            key.GetComponent<Button>().interactable = false;
-            key.GetComponentInChildren<Text>().text = string.Empty;
-            key.gameObject.SetActive(true);
-        }
-    }
-    string[] perfects = { "Felicitări!", "Bravo!", "Perfect!", "Extraordinar!" };
     public void SolveWord(bool rewarded)
     {
         if (rewarded)
         {
-            if (Settings.audioEnabled)
-                asFinish.Play();
+            FZAudio.Manager.PlaySound(Sounds.Instance.correct);
 
             if (Settings.vibrationEnabled)
                 Handheld.Vibrate();
 
-            if (currentWord.isGuess)
-                AddToPoints(10);
+            if (currentLogo.isGuess)
+                Values.Instance.AddToPoints(10);
             else
-                AddToPoints(5);
+                Values.Instance.AddToPoints(5);
 
             perfectText.gameObject.SetActive(true);
-            perfectText.text = perfects[UnityEngine.Random.Range(0, perfects.Length)];
+            perfectText.text = Texts.perfects.RandomItem();
         }
 
-        FZSave.Bool.Set($"{currentCategory.categoryName}_{currentWord.wordText}_done", true);
+        FZSave.Bool.Set($"{currentCategory.name}_{currentLogo.name}_done", true);
 
-        currentWord.isDone = true;
+        currentLogo.isDone = true;
 
         currentIndexInWord = 0;
 
-        wordFinal.text = currentWord.wordText;
-        imageFinal.sprite = Resources.Load<Sprite>($"LogosFull/{currentCategory.categoryName}/{currentWord.wordText}");
-        if (!string.IsNullOrEmpty(currentWord.about))
-            aboutFinal.text = currentWord.about;
-        else
-            aboutFinal.text = string.Empty;
+        wordFinal.text = currentLogo.name;
+        imageFinal.sprite = Resources.Load<Sprite>($"LogosFull/{currentCategory.name}/{currentLogo.name}");
 
         yearsFinal.text = string.Empty;
-        if (currentWord.startYear > 0)
-            yearsFinal.text = currentWord.startYear.ToString();
-        if (currentWord.endYear > 0)
-            yearsFinal.text += "-" + currentWord.endYear.ToString();
+        if (currentLogo.startYear > 0)
+            yearsFinal.text = currentLogo.startYear.ToString();
+        if (currentLogo.endYear > 0)
+            yearsFinal.text += "-" + currentLogo.endYear.ToString();
 
 
         ShowPanel(nextPanel);
-        if (currentWord.isGuess && currentWord.guessed || !currentWord.isGuess)
+        if (currentLogo.isGuess && currentLogo.guessed || !currentLogo.isGuess)
         {
-            AddToTickets(1);
+            Values.Instance.AddToTickets(1);
         }
-
-        if (AdsManager.adStep % adStepToPlay == 0)
-        {
-            AdsManager.Instance.ShowAd();
-        }
+        AdsManager.Instance.ShowAd();
     }
 
-    public void NextWord()
+    public void NextLogo()
     {
-        AdsManager.adStep++;
-        Debug.Log("Ad step: " + AdsManager.adStep);
-
-        if (AdsManager.adStep % adStepToPlay == 0)
-        {
-            AdsManager.Instance.LoadAd();
-        }
+        AdsManager.Instance.LoadAdIfCase();
 
         ShowPanel(null);
 
-        if (UnityEngine.Random.value < 0.1f) //Bonus word
-        {
-            if (TryGetBonusWord() != null)
-            {
-                currentWord = TryGetBonusWord();
-                SetWord();
-                return;
-            }
-            else TryGetNewWordIndex_Forward(Values.currentWordIndex);
+        GetNewLogo_Forward();
 
-        }
-        else
-            TryGetNewWordIndex_Forward(Values.currentWordIndex);
-
-        LoadNewWord();
+        SetLogo();
     }
 
     public void Skip()
     {
-        TryGetNewWordIndex_Forward(Values.currentWordIndex);
+        GetNewLogo_Forward();
 
-        LoadNewWord();
+        SetLogo();
         ShowPanel(null);
+    }
+
+    public void GetReward()
+    {
+    }
+
+    public void ClaimReward(GameObject rewardPanel)
+    {
     }
 
     public void SkipBack()
     {
-        TryGetNewWordIndex_Backward(Values.currentWordIndex);
+        GetNewLogo_Backward();
 
-        LoadNewWord();
+        SetLogo();
         ShowPanel(null);
     }
 
-    public void SelectCategory()
-    {
-        currentCategory = WordsDB.categoriesRO[Values.currentCategoryIndex];
-
-        finalWordBar.color = currentCategory.darkColor;
-        lettersBar.color = currentCategory.normalColor;
-
-        // Colors
-        foreach (var icon in icons)
-        {
-            icon.color = currentCategory.darkColor;
-        }
-        foreach (var icon in specialButtons)
-        {
-            icon.color = currentCategory.normalColor;
-        }
-        foreach (var text in specialTexts)
-        {
-            text.color = currentCategory.darkColor;
-        }
-
-        currentWords = currentCategory.words;
-    }
-
-    public void Quit()
+    public void Quit(bool showCategories)
     {
         SceneManager.LoadScene(0);
-    }
-
-    private void AddToPoints(int value)
-    {
-        Values.points += value;
-        pointsTotalText.GetComponentInChildren<FZText>().SlowlyUpdateNumberText(Values.points);
-        PlayerPrefs.SetInt("points", Values.points);
-
-        CheckPoints();
-    }
-
-    private void AddToTickets(int value)
-    {
-        Values.tickets++;
-        ticketsTotalText.GetComponent<FZText>().SlowlyUpdateNumberText(Values.tickets);
-        PlayerPrefs.SetInt("tickets", Values.tickets);
-
-        //CheckTickets();
     }
 
     private void CheckPoints()
@@ -517,118 +406,15 @@ public class Logic : MonoBehaviour
         solveButton.interactable = (Values.points >= 100);
     }
 
-    public void OnKeyPress(Key pressedKey)
-    {
-        if (Settings.audioEnabled)
-            lettersBar.GetComponent<AudioSource>().Play();
-
-        if (currentIndexInWord < currentWord.wordText.Length)
-        {
-            finalWordBar.GetComponent<Animator>().SetBool("expanded", false);
-
-            PlayerPrefs.SetInt("pressedKeys", ++Values.pressedKeys);
-
-            Change(pressedKey);
-
-            if (currentIndexInWord + 1 < finalKeys.Count)
-            {
-                while (finalKeys[currentIndexInWord].value != string.Empty || finalKeys[currentIndexInWord].isSymbol)
-                    currentIndexInWord++;
-            }
-            else
-                currentIndexInWord++;
-
-            if (currentIndexInWord == currentWord.wordText.Length)
-            {
-                string word = string.Empty;
-                foreach (var item in finalKeys)
-                {
-                    word += item.value;
-                }
-                if (word.ToUpperInvariant() == currentWord.wordText.ToUpperInvariant())
-                    SolveWord(true);
-                else
-                {
-                    finalWordBar.GetComponent<Animator>().SetBool("expanded", true);
-                    if (Settings.audioEnabled)
-                        asNo.Play();
-                }
-            }
-            else
-            {
-                HighlightKey(currentIndexInWord);
-            }
-        }
-    }
-
-    private void HighlightKey(int index)
-    {
-        finalKeys[index].GetComponent<RectTransform>().sizeDelta = keyZoomSize;
-        finalKeys[index].transform.SetAsLastSibling();
-    }
-
-    private void Change(Key pressedKey)
-    {
-        currentFinalKey = finalKeys[currentIndexInWord];
-        currentFinalKey.fromKey = pressedKey;
-
-        currentFinalKey.value = pressedKey.value;
-        currentFinalKey.GetComponentInChildren<Text>().text = pressedKey.value;
-
-        currentFinalKey.GetComponent<Button>().interactable = true;
-        pressedKey.GetComponent<Button>().interactable = false;
-
-        currentFinalKey.GetComponent<RectTransform>().sizeDelta = keySize;
-    }
-
-    public void ChangeLetterInWord(Key keyToChange)
-    {
-        if (Settings.audioEnabled)
-            finalWordBar.GetComponent<AudioSource>().Play();
-
-        finalWordBar.GetComponent<Animator>().SetBool("expanded", false);
-
-        if (currentIndexInWord > keyToChange.index)
-        {
-            currentIndexInWord = keyToChange.index;
-            currentFinalKey = finalKeys[currentIndexInWord];
-        }
-
-        keyToChange.fromKey.GetComponent<Button>().interactable = true;
-        keyToChange.value = string.Empty;
-        keyToChange.GetComponentInChildren<Text>().text = string.Empty;
-        keyToChange.GetComponent<Button>().interactable = false;
-
-        foreach (var item in finalKeys)
-        {
-            item.GetComponent<RectTransform>().sizeDelta = keySize;
-        }
-        HighlightKey(currentIndexInWord);
-
-        PlayerPrefs.SetInt("deletedLetters", ++Values.deletedLetters);
-    }
-
     public void ClearFinalKeys()
     {
         finalWordBar.GetComponent<Animator>().SetBool("expanded", false);
-
-        foreach (var key in finalKeys)
-        {
-            if (key.fromKey != null)
-                key.fromKey.GetComponent<Button>().interactable = true;
-            key.value = string.Empty;
-            key.GetComponentInChildren<Text>().text = string.Empty;
-            key.GetComponent<Button>().interactable = false;
-        }
-
-        currentIndexInWord = 0;
-        HighlightKey(currentIndexInWord);
     }
 
     #region Help
     public void UseHelp(int cost)
     {
-        AddToPoints(-cost);
+        Values.Instance.AddToPoints(-cost);
 
         PlayerPrefs.SetInt("hintsUsed", ++Values.helpUsed);
     }
@@ -637,7 +423,8 @@ public class Logic : MonoBehaviour
     {
         isHintShown = true;
         hintButton.interactable = false;
-        hintText.text = currentWord.hint;
+        hintText.transform.parent.gameObject.SetActive(true);
+        hintText.text = currentLogo.hint;
 
         HideAllPanels();
     }
@@ -646,55 +433,31 @@ public class Logic : MonoBehaviour
     {
         isLettersRevealed = true;
         revealButton.interactable = false;
-        bool[] posRevealed = new bool[currentWord.wordText.Length];
+        bool[] posRevealed = new bool[currentLogo.name.Length];
 
         ClearFinalKeys();
-        int i = Mathf.RoundToInt((float)currentWord.wordText.Length / 3f);
-        foreach (var key in keys)
+        int i = Mathf.RoundToInt((float)currentLogo.name.Length / 3f);
+        foreach (var key in Keys)
         {
             if (i > 0)
             {
-                if (currentWord.wordText.ToUpperInvariant().Contains(key.value.ToUpperInvariant()))
+                if (currentLogo.name.ToUpperInvariant().Contains(key.value.ToUpperInvariant()))
                 {
-                    currentIndexInWord = currentWord.wordText.ToUpperInvariant().IndexOf(key.value.ToUpperInvariant());
+                    currentIndexInWord = currentLogo.name.ToUpperInvariant().IndexOf(key.value.ToUpperInvariant());
                     if (!posRevealed[currentIndexInWord])
                     {
                         posRevealed[currentIndexInWord] = true;
-                        Change(key);
+                        //Change(key);
                         i--;
                     }
                 }
             }
         }
         currentIndexInWord = 0;
-        while (finalKeys[currentIndexInWord].value != string.Empty)
-            currentIndexInWord++;
+        //while (finalKeys[currentIndexInWord].value != string.Empty)
+        // currentIndexInWord++;
 
         HideAllPanels();
-    }
-    #endregion
-
-    public void GetFreePoints()
-    {
-    }
-
-    #region Ads events
-    void InitializeRewardedAd()
-    {
-
-    }
-
-    public void HandleOnAdClosed(object sender, EventArgs args)
-    {
-        finishWordAd.Destroy();
-    }
-    public void HandleUserEarnedReward(object sender, Reward args)
-    {
-        AddToPoints(25);
-    }
-    public void HandleRewardedAdClosed(object sender, EventArgs args)
-    {
-        InitializeRewardedAd();
     }
     #endregion
 }

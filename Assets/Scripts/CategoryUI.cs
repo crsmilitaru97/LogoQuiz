@@ -67,7 +67,6 @@ public class CategoryUI : MonoBehaviour
     public void Play()
     {
         Menu.categoryScrollIndex = index;
-        Values.currentCategoryIndex = index;
         FZCanvas.Instance.FadeLoadScene(1, Color.black);
         LogosManager.currentCategory = currentCategory;
     }
@@ -119,7 +118,7 @@ public class CategoryUI : MonoBehaviour
             priceToUnlock = 0;
             for (int i = 0; i < index; i++)
             {
-                priceToUnlock += (int)(WordsDB.categoriesRO[i].words.Length / 2f) - WordsDB.categoriesRO[i].priceToUnlock;
+                //priceToUnlock += (int)(WordsDB.categoriesRO[i].words.Length / 2f) - WordsDB.categoriesRO[i].priceToUnlock;
             }
             currentCategory.priceToUnlock = priceToUnlock;
             //priceToUnlockText.text = priceToUnlock.ToString();

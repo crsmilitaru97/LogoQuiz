@@ -29,7 +29,7 @@ public class PreGame : MonoBehaviour
             else
                 logoObj.GetComponent<FZButton>().buttonImage.sprite = logo.partImage;
 
-            logoObj.GetComponent<FZButton>().interactable = logo.isDone;
+            logoObj.GetComponent<FZButton>().interactable = !logo.isDone;
 
             FZColors.ChangeButtonColors(logoObj.GetComponent<FZButton>(), logoObj.GetComponent<FZButton>().colors.normalColor, LogosManager.currentCategory.color);
         }

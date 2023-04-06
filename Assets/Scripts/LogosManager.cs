@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LogosManager : MonoBehaviour
 {
-    public enum Countries { France, Japan, Romania, USA, Germany, Switzerland, Spain, Poland, Sweden, Russia, Netherlands, Belgium, Greece, UnitedKingdom, Estonia, China, Italy };
     public Category[] Categories;
-    public static LogosManager Manager;
+
     public static Category currentCategory;
     public static Logo currentLogo;
+
+    public static LogosManager Manager;
 
     private void Awake()
     {
@@ -16,14 +17,21 @@ public class LogosManager : MonoBehaviour
 
         Manager = this;
 
+        int i = 0;
         foreach (var category in Categories)
         {
             category.locked = FZSave.Bool.Get($"{category.name}Unlocked", false);
 
             foreach (var logo in category.Logos)
             {
-                logo.fullImage = Resources.Load<Sprite>("Logos/" + logo.name);
-                logo.partImage = Resources.Load<Sprite>("Logos/" + logo.name + "_");
+                logo.fullImage = Resources.Load<Sprite>("Logos/" + category.name + "/" + logo.name);
+                logo.partImage = Resources.Load<Sprite>("Logos/" + category.name + "/" + logo.name + "_");
+
+                logo.ID = i;
+                i++;
+
+                if (logo.partImage == null)
+                    logo.partImage = logo.fullImage;
             }
         }
 
@@ -36,19 +44,25 @@ public class LogosManager : MonoBehaviour
     {
         public string name;
         [HideInInspector]
+        public int ID;
+        [HideInInspector]
         public Sprite fullImage;
         [HideInInspector]
         public Sprite partImage;
         public string hint = string.Empty;
         [Header("Details")]
-        public Countries country;
-        [Multiline]
-        public string about = string.Empty;
+        public string country;
         public int startYear;
         public int endYear;
+        [Multiline]
+        public string about = string.Empty;
+
         [HideInInspector]
         public bool isDone = false;
-
+        [HideInInspector]
+        public bool isGuess = false;
+        [HideInInspector]
+        public bool guessed = false;
     }
 
     [Serializable]
