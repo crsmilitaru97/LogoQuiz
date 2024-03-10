@@ -1,162 +1,85 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CategoryUI : MonoBehaviour
 {
     public FZText title;
     public FZText doneText;
+    public FZText doneMaxText;
+
     public Image doneFill;
+
     public GameObject lockedGroup;
     public FZText priceText;
 
-    private Color textColor = new Color(0.2f, 0.2f, 0.2f, 1);
-    private Color textColor2 = new Color(0.2f, 0.2f, 0.2f, 0.6f);
-
-    private Color disabledTextColor = new Color(0.2f, 0.2f, 0.2f, 0.6f);
-    private Color disabledTextColor2 = new Color(0.2f, 0.2f, 0.2f, 0.3f);
-
     public int index;
-    private int priceToUnlock;
 
-    private bool fly;
-    private List<GameObject> ticketsToFly = new List<GameObject>();
-    public LogosManager.Category currentCategory;
+    public LogosManager.Category category;
 
     public void Refresh()
     {
-        GetComponent<Image>().color = currentCategory.color;
+        GetComponent<Image>().color = category.color;
 
-        //disabledColor = thisCategory.normalColor;
-        //disabledColor.a = 0.5f;
-        //disabledColorDark = thisCategory.darkColor;
-        //disabledColorDark.a = 0.5f;
-
-        Lock(currentCategory.locked);
-
-        // VisualyChange(thisCategory.completed);
-        priceText.text = currentCategory.priceToUnlock.ToString();
-        title.text = currentCategory.name;
-        doneText.text = $"{currentCategory.wordsDoneCount}/{currentCategory.Logos.Length}";
-        doneFill.fillAmount = currentCategory.completed ? (float)currentCategory.wordsDoneCount / currentCategory.Logos.Length : 0;
+        title.text = category.name; 
+        category.wordsDoneCount=0;
+        foreach (var logo in category.Logos)
+        {
+            if (FZSave.Bool.Get($"{category.name}_{logo.name}_done", false))
+            {
+                logo.isDone = true;
+                category.wordsDoneCount++;
+            }
+        }
+        doneText.text = category.wordsDoneCount.ToString();
+        doneMaxText.text = $"/{category.Logos.Length}";
+        doneFill.fillAmount = category.completed ? (float)category.wordsDoneCount / category.Logos.Length : 0;
+        category.locked = FZSave.Bool.Get($"{category.name}Locked", true);
+        Lock(category.locked);
     }
 
-    private void VisualyChange(bool enabled)
+    public void TryBuyCategory()
     {
-        if (enabled)
-        {
-            title.color = disabledTextColor;
-            doneText.color = disabledTextColor2;
+        Menu.selectedCategoryUI = this;
 
-            //thisCategory.normalColor = disabledColor;
-            //thisCategory.darkColor = disabledColorDark;
+        Menu.Instance.buyCategoryButton.interactable = Values.tickets >= category.priceToUnlock;
+        Menu.Instance.buyCategoryButton.GetComponent<Image>().color = category.color;
+        Menu.Instance.buyCategoryTitle.text = category.name;
+        Menu.Instance.buyCategoryPriceText.text = category.priceToUnlock.ToString();
 
-            //GetComponent<Image>().color = disabledColor;
-            //doneFill.color = disabledColorDark;
-        }
-        else
-        {
-            title.color = textColor;
-            doneText.color = textColor2;
-
-            //GetComponent<Image>().color = thisCategory.normalColor;
-            //doneFill.color = thisCategory.darkColor;
-        }
+        Menu.Instance.buyCategoryGroup.SetActive(true);
+        Menu.Instance.buyCategoryGroup.GetComponent<Animator>().SetBool("shown", true);
     }
 
     public void Play()
     {
         Menu.categoryScrollIndex = index;
-        FZCanvas.Instance.FadeLoadScene(1, Color.black);
-        LogosManager.currentCategory = currentCategory;
+        LogosManager.currentCategory = category;
+        FZCanvas.Instance.FadeLoadScene(1, Values.Instance.accentColor);
     }
 
-    public void BuyUnlock()
+    public void Lock(bool locked)
     {
-        if (fly) return;
+        doneText.gameObject.SetActive(!locked);
+        doneMaxText.gameObject.SetActive(!locked);
+        lockedGroup.SetActive(locked);
 
-        if (Values.tickets >= priceToUnlock)
+        if (locked)
         {
-            Values.tickets -= priceToUnlock;
-            FZSave.Bool.Set($"{currentCategory.name}Unlocked", true);
-
-            Menu.instance.categoriesTicketsText.transform.GetChild(0).GetComponent<FZText>().SlowlyUpdateNumberText(Values.tickets);
-            PlayerPrefs.SetInt("tickets", Values.tickets);
-
-
-            for (int i = 0; i < priceToUnlock; i++)
-            {
-                //GameObject tfly = Instantiate(ticketToFly);
-                //tfly.transform.SetParent(this.transform);
-                //tfly.transform.localScale = new Vector3(1, 1, 1);
-                //tfly.transform.position = Menu.instance.categoriesTicketsText.transform.position;
-                //ticketsToFly.Add(tfly);
-            }
-            fly = true;
-        }
-        else
-        {
-            if (Settings.audioEnabled)
-                transform.parent.GetComponent<AudioSource>().Play();
-            GetComponent<Animation>().Play("category_no");
-        }
-    }
-
-    public void OpenBuyCategory()
-    {
-
-    }
-
-    private void Lock(bool lockedStatus)
-    {
-        if (lockedStatus)
-        {
-            lockedGroup.SetActive(true);
             GetComponent<Button>().interactable = false;
             doneText.gameObject.SetActive(false);
 
-            priceToUnlock = 0;
-            for (int i = 0; i < index; i++)
-            {
-                //priceToUnlock += (int)(WordsDB.categoriesRO[i].words.Length / 2f) - WordsDB.categoriesRO[i].priceToUnlock;
-            }
-            currentCategory.priceToUnlock = priceToUnlock;
-            //priceToUnlockText.text = priceToUnlock.ToString();
+            //priceToUnlock = 0;
+            //for (int i = 0; i < index; i++)
+            //{
+            //    priceToUnlock += (int)(WordsDB.categoriesRO[i].words.Length / 2f) - WordsDB.categoriesRO[i].priceToUnlock;
+            //}
+            //currentCategory.priceToUnlock = priceToUnlock;
+            priceText.text = category.priceToUnlock.ToString();
         }
         else
         {
-            lockedGroup.SetActive(false);
             GetComponent<Button>().interactable = true;
             doneText.gameObject.SetActive(true);
-        }
-    }
-
-    private void Update()
-    {
-        if (fly)
-        {
-            bool done = false;
-            foreach (var item in ticketsToFly)
-            {
-                //if (item.transform.position != ticketsToUnlockImage.transform.position)
-                // {
-                //     done = false;
-                //   item.transform.position = Vector2.MoveTowards(item.transform.position, ticketsToUnlockImage.transform.position, Time.deltaTime * Random.Range(1500, 2000));
-                // }
-                //else
-                //    done = true;
-            }
-            if (done)
-            {
-                foreach (var item in ticketsToFly)
-                {
-                    Destroy(item);
-                }
-                ticketsToFly.Clear();
-
-                fly = false;
-                Lock(false);
-            }
         }
     }
 }

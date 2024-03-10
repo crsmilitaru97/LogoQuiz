@@ -6,9 +6,10 @@ public class Sounds : MonoBehaviour
     public AudioClip correct;
     public AudioClip wrong;
     public AudioClip keyPress;
+    public AudioClip noBuyCategory;
 
     void Awake()
     {
-        Instance=this;
+        Instance = this;
     }
 }

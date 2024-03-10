@@ -2,23 +2,40 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-//04.04.23
+//07.04.23
 
 [CustomEditor(typeof(FZText))]
 
 public class FZTextEditor : UnityEditor.UI.TextEditor
 {
+    SerializedProperty translation;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        translation = serializedObject.FindProperty("translations");
+    }
+
     public override void OnInspectorGUI()
     {
+        serializedObject.Update();
+
         FZText targetText = (FZText)target;
         targetText.timeInterval = EditorGUILayout.FloatField("Time Interval", targetText.timeInterval);
-        targetText.textTranslationID = EditorGUILayout.TextField("Translation ID", targetText.textTranslationID);
+        EditorGUILayout.PropertyField(translation);
+
+
+        AppearanceControlsGUI();
+        RaycastControlsGUI();
+        MaskableControlsGUI();
+        serializedObject.ApplyModifiedProperties();
+
         base.OnInspectorGUI();
 
         if (GUI.changed)
         {
             EditorUtility.SetDirty(targetText);
-            EditorSceneManager.MarkSceneDirty(targetText.gameObject.scene); 
+            EditorSceneManager.MarkSceneDirty(targetText.gameObject.scene);
         }
     }
 }

@@ -1,0 +1,1514 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.21f1 (bf09ca542b87) revision 12519882'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22635) 64bit Professional' Language: 'en' Physical Memory: 16220 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.21f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Projects/Unity Projects/LogoQuiz
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+60829
+Successfully changed project path to: C:/Projects/Unity Projects/LogoQuiz
+C:/Projects/Unity Projects/LogoQuiz
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [22328] Host "[IP] 192.168.28.162 [Port] 0 [Flags] 2 [Guid] 3534325376 [EditorId] 3534325376 [Version] 1048832 [Id] WindowsEditor(7,CristiPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [22328] Host "[IP] 192.168.28.162 [Port] 0 [Flags] 2 [Guid] 3534325376 [EditorId] 3534325376 [Version] 1048832 [Id] WindowsEditor(7,CristiPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 48.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.21f1 (bf09ca542b87)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Projects/Unity Projects/LogoQuiz/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4060 (ID=0x2882)
+    Vendor:   NVIDIA
+    VRAM:     7957 MB
+    Driver:   31.0.15.5176
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.037620 seconds.
+- Loaded All Assemblies, in  0.441 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 267 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.611 seconds
+Domain Reload Profiling: 1046ms
+	BeginReloadAssembly (135ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (105ms)
+	LoadAllAssembliesAndSetupDomain (151ms)
+		LoadAssemblies (131ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (147ms)
+			TypeCache.Refresh (146ms)
+				TypeCache.ScanAssembly (133ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (612ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (555ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (410ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (96ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.560 seconds
+Refreshing native plugins compatible for Editor in 31.05 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.471 seconds
+Domain Reload Profiling: 1022ms
+	BeginReloadAssembly (181ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (256ms)
+		LoadAssemblies (330ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (41ms)
+			TypeCache.Refresh (35ms)
+				TypeCache.ScanAssembly (24ms)
+			ScanForSourceGeneratedMonoScriptInfo (4ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (471ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (331ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (47ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (57ms)
+			ProcessInitializeOnLoadAttributes (174ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (27ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 35.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 744 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 81 unused Assets / (83.1 KB). Loaded Objects now: 1171.
+Memory consumption went from 73.9 MB to 73.8 MB.
+Total: 2.132100 ms (FindLiveObjects: 0.072900 ms CreateObjectMapping: 0.015000 ms MarkObjects: 1.919100 ms  DeleteObjects: 0.123800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 13040.767834 seconds.
+  path: Assets/Resources/Logos/Cars/DMC.png
+  artifactKey: Guid(e90226a7ad285004185128bad86c8386) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/DMC.png using Guid(e90226a7ad285004185128bad86c8386) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'aa50ea69edabc0e199878a8de5bd8ade') in 0.124621 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Resources/Logos/Apps/tinder.png
+  artifactKey: Guid(a5566057f6296d84eae68891b91810f8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/tinder.png using Guid(a5566057f6296d84eae68891b91810f8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2b25b981c54715cdcec0f6fa5a24495d') in 0.033463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Resources/Logos/Cars/Land Rover_.png
+  artifactKey: Guid(ec93ed3f42b66724faea703a435acb64) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Land Rover_.png using Guid(ec93ed3f42b66724faea703a435acb64) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '68097250571eac3132db160820890e49') in 0.015793 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Resources/Logos/Cars/Lamborghini.png
+  artifactKey: Guid(df56f37354b35ee43a6816a93d846b21) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Lamborghini.png using Guid(df56f37354b35ee43a6816a93d846b21) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b53dfb88ca7badd8a99dff49a95cc441') in 0.019558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Resources/Logos/Cars/AMG_.png
+  artifactKey: Guid(d072cba90ede9c44bac6f0c10076d84c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/AMG_.png using Guid(d072cba90ede9c44bac6f0c10076d84c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'be46f7766913722c3deff4ad114a6fdc') in 0.016706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/Cars/DMC_.png
+  artifactKey: Guid(64eb977d619be85479b7b0ae891eab75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/DMC_.png using Guid(64eb977d619be85479b7b0ae891eab75) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f2bfe91c69aac73ca334b183c1ad7d2a') in 0.016857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Resources/Logos/Cars/Apal_.png
+  artifactKey: Guid(f2d87240ee9e520489dcdd66f658f5cd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Apal_.png using Guid(f2d87240ee9e520489dcdd66f658f5cd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ad20e256d15c0e80641619cc4492c3a3') in 0.017174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Resources/Logos/Cars/Arash_.png
+  artifactKey: Guid(9acfd2b30ffaa4e41a5ee7aa207d262d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Arash_.png using Guid(9acfd2b30ffaa4e41a5ee7aa207d262d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '719de7a222e5d0d53b8be1b7edf5580c') in 0.017921 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/Resources/Logos/Cars/Corvette.png
+  artifactKey: Guid(5ab0df3736e7755478e0768fae1ba034) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Corvette.png using Guid(5ab0df3736e7755478e0768fae1ba034) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a781c45c50f61b7f766e4b8d9bea51e7') in 0.022131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Cars/Aston Martin.png
+  artifactKey: Guid(eb6804cb5b69b514cb4742c7d4ffa8a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Aston Martin.png using Guid(eb6804cb5b69b514cb4742c7d4ffa8a3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '78ea3e44a31f6eff183c0c38c6d9ca71') in 0.016766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Logos/Cars/Bertone.png
+  artifactKey: Guid(ce7c63b08c7ca9f44b1b32ff1b3ef4e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Bertone.png using Guid(ce7c63b08c7ca9f44b1b32ff1b3ef4e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '55b12d45e1315e53c9b6e525d26b8c92') in 0.018640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Resources/Logos/Cars/AMG.png
+  artifactKey: Guid(63b65f83fbf1f7e4187a65f71fd03cf6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/AMG.png using Guid(63b65f83fbf1f7e4187a65f71fd03cf6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '48d5e45551d9f715cd3d27f28dafbed0') in 0.019240 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Cars/Citroen_.png
+  artifactKey: Guid(6e0936130c78498419f0054f210ffe6c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Citroen_.png using Guid(6e0936130c78498419f0054f210ffe6c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '89dbae229acb5c4e8f5bf910f15cfc52') in 0.015737 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Resources/Logos/Cars/Fiat_.png
+  artifactKey: Guid(a5a0e5644ca14324b9fd5d7b5af47154) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Fiat_.png using Guid(a5a0e5644ca14324b9fd5d7b5af47154) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c9eb142e025a6818968874ccf5eced96') in 0.017511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/Logos/Cars/Mitsubishi.png
+  artifactKey: Guid(e3bce9c8539f6b84c8e5eb7684bb9dc7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mitsubishi.png using Guid(e3bce9c8539f6b84c8e5eb7684bb9dc7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3e4ab316b0290bb6c89fe1d20651aaff') in 0.017870 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Resources/Logos/Cars/Saturn.png
+  artifactKey: Guid(beefba70da5f8254387ab47165196d27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Saturn.png using Guid(beefba70da5f8254387ab47165196d27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e17018596bee0e7863f3bbdb5daddac8') in 0.017420 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Cars/MAN_.png
+  artifactKey: Guid(e960a0f03ce721b42bcd01430349387b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/MAN_.png using Guid(e960a0f03ce721b42bcd01430349387b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '94df1e3fc9edcb86611ea909875ca30c') in 0.017037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Resources/Logos/Cars/Saturn_.png
+  artifactKey: Guid(6b76123b11ccc154da1d9d2b132d7a00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Saturn_.png using Guid(6b76123b11ccc154da1d9d2b132d7a00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a0dcee12b407ae59f9a047692a5526a0') in 0.017122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Cars/SsangYong_.png
+  artifactKey: Guid(332b9baa6197a1c4fa6bbf1647a2e230) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/SsangYong_.png using Guid(332b9baa6197a1c4fa6bbf1647a2e230) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '96ec681ec39e46b338db5f1a31b4d7c9') in 0.017480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Resources/Logos/Cars/Volvo.png
+  artifactKey: Guid(e11130ca3da22b1449474616f7c56ce0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Volvo.png using Guid(e11130ca3da22b1449474616f7c56ce0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8998ab259ebd12b261fb8ca818da1ca1') in 0.015934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Resources/Logos/Cars/Mazda.png
+  artifactKey: Guid(1ed6512eaf9c6da409f9b05b490d7b7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mazda.png using Guid(1ed6512eaf9c6da409f9b05b490d7b7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ecdd77c41a19df9d917661dc89504be3') in 0.018111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/Resources/Logos/Cosmetics/blend-a-med_.png
+  artifactKey: Guid(5cd5895334511ee40ace36f1a9b694ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/blend-a-med_.png using Guid(5cd5895334511ee40ace36f1a9b694ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '85baa827b50beab89da9b93f8cc94045') in 0.017640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Resources/Logos/Cars/Nismo.png
+  artifactKey: Guid(75e68fbd7a8361b4ebb4d5e55051aed1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Nismo.png using Guid(75e68fbd7a8361b4ebb4d5e55051aed1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e2c5081996eba10d8265ec6ec5bfe761') in 0.017657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Resources/Logos/Cosmetics/Always.png
+  artifactKey: Guid(78b952fddd3fda446ba83ea814fa52dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/Always.png using Guid(78b952fddd3fda446ba83ea814fa52dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '77c100a34ef76620fa025c983162b1b5') in 0.019030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Logos/Cars/Mercury.png
+  artifactKey: Guid(70102c101f9301d4bb0c310c923f6da3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mercury.png using Guid(70102c101f9301d4bb0c310c923f6da3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '34ff9669c0aea73efa08b2fb51c4eee4') in 0.018283 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Resources/Logos/Cars/Tesla_.png
+  artifactKey: Guid(dba6cf0a826229c4c998334bc6b321a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Tesla_.png using Guid(dba6cf0a826229c4c998334bc6b321a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ddcc528cf56d14f26f04c33065aa4d3a') in 0.016841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Resources/Logos/Cars/Subaru_.png
+  artifactKey: Guid(71146c35db3b63a44b1f429a17dc6a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Subaru_.png using Guid(71146c35db3b63a44b1f429a17dc6a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'fd423219198831ca9e661754624d3bd9') in 0.017907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Resources/Logos/Cars/Subaru.png
+  artifactKey: Guid(94b63ac67f38a4d44ac1c83a98f73ae5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Subaru.png using Guid(94b63ac67f38a4d44ac1c83a98f73ae5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '66400042d29e986793bd77c7de2cc7f3') in 0.016425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000109 seconds.
+  path: Assets/Resources/Logos/Cars/Mercedes Benz.png
+  artifactKey: Guid(ac7fbbd551e082c478ec46dcd294d84a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mercedes Benz.png using Guid(ac7fbbd551e082c478ec46dcd294d84a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1b8b632a11a2765f661e376e61136223') in 0.017923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Resources/Logos/Cars/Renault_.png
+  artifactKey: Guid(002fdcd5086cc5d41bdf3cb006672edb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Renault_.png using Guid(002fdcd5086cc5d41bdf3cb006672edb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '81775e3869db6f66c6d164ca65d481ea') in 0.019346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/Resources/Logos/Cars/Saleen.png
+  artifactKey: Guid(e824e29a1fb76cd41960a79bb3712974) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Saleen.png using Guid(e824e29a1fb76cd41960a79bb3712974) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd20fe861f82d6d5903366a2433e8bfca') in 0.019082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Resources/Logos/Cars/Mini_.png
+  artifactKey: Guid(3e2614c109ff9084387c3180e1e49178) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mini_.png using Guid(3e2614c109ff9084387c3180e1e49178) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4e73ef53b9ef3c582f118dd3878bcfd1') in 0.018937 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Cars/Vauxhall.png
+  artifactKey: Guid(33dd5a8aec8b1ed438a682cd664ce424) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Vauxhall.png using Guid(33dd5a8aec8b1ed438a682cd664ce424) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '21387774bf06cc9db440e02414f50af7') in 0.018326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Resources/Logos/Cars/Citroen.png
+  artifactKey: Guid(864a6205a327d1346b2ab721447b86f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Citroen.png using Guid(864a6205a327d1346b2ab721447b86f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f52d0bb646ec2498f5970e0b616717ea') in 0.016238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/Cars/Skoda_.png
+  artifactKey: Guid(1e824b14232cef047bb140ca4546592e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Skoda_.png using Guid(1e824b14232cef047bb140ca4546592e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '96efbde350183e8847433185e97d7b1e') in 0.019042 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Logos/Apps/PayPal.png
+  artifactKey: Guid(83aacb6208d07f5458f9f243aa8ab4f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/PayPal.png using Guid(83aacb6208d07f5458f9f243aa8ab4f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '23c3be739f3d3c3fc64282203e7b66d2') in 0.020757 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Apps/Unity_.png
+  artifactKey: Guid(037db2246d0fc784294bb17b0ef2ce96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/Unity_.png using Guid(037db2246d0fc784294bb17b0ef2ce96) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0190445a7e8aa870645987a2fbf1d945') in 0.021992 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Resources/Logos/Cars/Rivian_.png
+  artifactKey: Guid(80282f22d249a594e8da24d66c118de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Rivian_.png using Guid(80282f22d249a594e8da24d66c118de4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a852c22bb9814ed4350f52db356d2ea2') in 0.016751 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Resources/Logos/Cars/Brabus_.png
+  artifactKey: Guid(9b2f3fb5228b05a42980cda278b15d9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Brabus_.png using Guid(9b2f3fb5228b05a42980cda278b15d9d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8b395a6770857d667ab9f750059cfedb') in 0.017787 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Resources/Logos/Apps/Slack_.png
+  artifactKey: Guid(2fc1f843cec71dd41b67f8d00a4578db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/Slack_.png using Guid(2fc1f843cec71dd41b67f8d00a4578db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4d33092b5cc6d1b013d3fa5ed0cb2c88') in 0.018497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Resources/Logos/Apps/Spotify.png
+  artifactKey: Guid(09b1efa0cb8312542b1192f5273664c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/Spotify.png using Guid(09b1efa0cb8312542b1192f5273664c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6a256a80c1b5b81b45630c0432097f59') in 0.019150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Apps/Amazon.png
+  artifactKey: Guid(69583344e696e304e9a882c1e01f4bb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/Amazon.png using Guid(69583344e696e304e9a882c1e01f4bb3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '665f97a3bf12c468f640f37276db9418') in 0.019809 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/Logos/Cars/ARO.png
+  artifactKey: Guid(63ceca09f107c584cab3698b07c75e71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/ARO.png using Guid(63ceca09f107c584cab3698b07c75e71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0159da867df6186add0fdddea345260c') in 0.017097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Resources/Logos/Cars/Hummer.png
+  artifactKey: Guid(8cad94cd720608e49b9660db47573bc1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Hummer.png using Guid(8cad94cd720608e49b9660db47573bc1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd3a33fadbdbad21582cef1b8dd8e4cab') in 0.018275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Resources/Logos/Drinks/Red Bull.png
+  artifactKey: Guid(2538a432e007a584bb105f260b082571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/Red Bull.png using Guid(2538a432e007a584bb105f260b082571) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b6ac2cc6385bff683340034eda71908b') in 0.027526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Food/Toblerone.png
+  artifactKey: Guid(a21472578d016a24e8cf48754d6d5523) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Toblerone.png using Guid(a21472578d016a24e8cf48754d6d5523) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '62853f87130404605fcd602d2d0391fe') in 0.033736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Resources/Logos/Games/Doom.png
+  artifactKey: Guid(a478ade30fdc2684092c26e67fea98d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Doom.png using Guid(a478ade30fdc2684092c26e67fea98d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3d7e8136be52e8c0094e3a22660ff6f8') in 0.017380 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/Logos/Games/Brawl Stars.png
+  artifactKey: Guid(7189cb4d6344b094b8685c62746f1887) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Brawl Stars.png using Guid(7189cb4d6344b094b8685c62746f1887) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '268cd9f4b80eb95cdfc2d1b081f04c91') in 0.016961 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000109 seconds.
+  path: Assets/Resources/Logos/Cosmetics/NYX_.png
+  artifactKey: Guid(4aed554b14feaf94ab57e98fc590019b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/NYX_.png using Guid(4aed554b14feaf94ab57e98fc590019b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '84a892d8e3cc15418ff87edfef0e76b1') in 0.025143 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/Resources/Logos/Games/Doom_.png
+  artifactKey: Guid(3a153ad679ae4f74b8eb298c1ad332b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Doom_.png using Guid(3a153ad679ae4f74b8eb298c1ad332b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4154cd7d52244b4bb2414b0eb4573274') in 0.019858 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Resources/Logos/Games/Call of Duty.png
+  artifactKey: Guid(0a4b352ddf3209647993f7e1b0a67425) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Call of Duty.png using Guid(0a4b352ddf3209647993f7e1b0a67425) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5522164e82114e0667bd50da4109377a') in 0.019418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Resources/Logos/Drinks/Coca-Cola.png
+  artifactKey: Guid(9a607aa1b27c11644a8ca258116fc66b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/Coca-Cola.png using Guid(9a607aa1b27c11644a8ca258116fc66b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b071fdaceb73b84a268c7276dee6cda6') in 0.017724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Resources/Logos/Cosmetics/L'oreal_.png
+  artifactKey: Guid(4a19a44587f03054293bcdfb0a57f246) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/L'oreal_.png using Guid(4a19a44587f03054293bcdfb0a57f246) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5e6b82abb72610622aede501988ecf50') in 0.026153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Logos/Drinks/Red Bull_.png
+  artifactKey: Guid(e9c803527b4715a4d9bcad2b004d9420) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/Red Bull_.png using Guid(e9c803527b4715a4d9bcad2b004d9420) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7b429b30baeab4a684e20e54c046aef5') in 0.020792 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Resources/Logos/Finance/Mastercard_.png
+  artifactKey: Guid(cec3b64704ee5e44aa115a6feebdb503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Finance/Mastercard_.png using Guid(cec3b64704ee5e44aa115a6feebdb503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8e737625128115d041f71307f1fcb7d6') in 0.019300 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Resources/Logos/Food/TicTac_.png
+  artifactKey: Guid(527bc15822504ef4db7819bcfece21a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/TicTac_.png using Guid(527bc15822504ef4db7819bcfece21a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a58e8f16f9b17eb04b064218ab58929c') in 0.018923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Resources/Logos/Finance/Visa_.png
+  artifactKey: Guid(601685b7761bed0478a4fa1dcfd6d8be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Finance/Visa_.png using Guid(601685b7761bed0478a4fa1dcfd6d8be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0fc8533e2d066934778e1bf8c4fbb458') in 0.018483 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Food/Milka_.png
+  artifactKey: Guid(21f079310d4d54449938fc79659989ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Milka_.png using Guid(21f079310d4d54449938fc79659989ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2e85b8abd2dbdcef6bbab8e239e2c045') in 0.026860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Games/Destiny.png
+  artifactKey: Guid(98063691d8af9ec4dbdced241c0d2e05) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Destiny.png using Guid(98063691d8af9ec4dbdced241c0d2e05) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6979554ff1c930980036429bc2635d46') in 0.017770 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Resources/Logos/Cosmetics/Old Spice_.png
+  artifactKey: Guid(ae48b464172406b47a11656ceaa8fa19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/Old Spice_.png using Guid(ae48b464172406b47a11656ceaa8fa19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a1c15fcdd52ee99f206c9d51ccdb4796') in 0.017345 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Resources/Logos/Finance/Visa.png
+  artifactKey: Guid(df9160ed6a2a0854ca1e61f031110252) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Finance/Visa.png using Guid(df9160ed6a2a0854ca1e61f031110252) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '61ef9abcc1182e279f74d7d9b1551520') in 0.016605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Resources/Logos/Drinks/Jacobs_.png
+  artifactKey: Guid(57f5c4eecc11c1245889a1e00e55f03d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/Jacobs_.png using Guid(57f5c4eecc11c1245889a1e00e55f03d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7ed17fb15882328c53cb33cbf8accd0a') in 0.020177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Food/Nutline_.png
+  artifactKey: Guid(a2fcfd94a9ed75f4ca0e2347043873e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Nutline_.png using Guid(a2fcfd94a9ed75f4ca0e2347043873e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6f76401bd73a7dd603443ade65396416') in 0.019564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Resources/Logos/Games/Blizzard_.png
+  artifactKey: Guid(be712725d279e9148b6767c0ed8a747a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Blizzard_.png using Guid(be712725d279e9148b6767c0ed8a747a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a6e8f6f790f36c67ccd7a5d4eb1dd049') in 0.016541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Resources/Logos/Games/Dead by Daylight.png
+  artifactKey: Guid(97411a77128702d418fe539b62ebb74f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Dead by Daylight.png using Guid(97411a77128702d418fe539b62ebb74f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b4e31d35e3d624e698a83be7e8916575') in 0.017541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/Resources/Logos/Cosmetics/NYX.png
+  artifactKey: Guid(da29663afc296314ca4903d85e870d17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cosmetics/NYX.png using Guid(da29663afc296314ca4903d85e870d17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '26c1eeff1f615eb921b22bc5d1473b5c') in 0.024111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Resources/Logos/Food/Toblerone_.png
+  artifactKey: Guid(c490aea3c477ce24288a84a769d4799e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Toblerone_.png using Guid(c490aea3c477ce24288a84a769d4799e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e008620ce38605d7a2dc92df41410792') in 0.029025 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Cars/Lucid.png
+  artifactKey: Guid(f3ed00562e63ff946a313e42698d46c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Lucid.png using Guid(f3ed00562e63ff946a313e42698d46c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e83b167d85657fa06fe3d31dc7ec5111') in 0.016421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Resources/Logos/Airlines/Air Canada_.png
+  artifactKey: Guid(43d974ec2afa3894195f72c862d44d7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Airlines/Air Canada_.png using Guid(43d974ec2afa3894195f72c862d44d7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9373d034a1fb7a301f1b7a3bbd9c9f57') in 0.020830 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000110 seconds.
+  path: Assets/Resources/Logos/Cars/Chrysler_.png
+  artifactKey: Guid(12fb22ef361a7af43adf52e2799719c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Chrysler_.png using Guid(12fb22ef361a7af43adf52e2799719c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c8a149e3b6eb224b28529dd9e0e8c3e4') in 0.016121 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/IT/IBM.png
+  artifactKey: Guid(aca45f7155b66c545a117db854df4477) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/IBM.png using Guid(aca45f7155b66c545a117db854df4477) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'fa69fde1d8051bf332511155022ac870') in 0.018062 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Resources/Logos/Games/Pac-Man_.png
+  artifactKey: Guid(30d08b6a172d4cf4d88e81331dfa8be9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Pac-Man_.png using Guid(30d08b6a172d4cf4d88e81331dfa8be9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3451d3bf216c3ae3c15c3bdc8880535c') in 0.015769 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/IT/Linux_.png
+  artifactKey: Guid(d54c78f4fb05ecf4bad85ec47718d38f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Linux_.png using Guid(d54c78f4fb05ecf4bad85ec47718d38f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b899dee18d6d6bbd4a9eeb1cbe3a2f11') in 0.018131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/IT/Intel.png
+  artifactKey: Guid(0243832f1d132e9489745addf705cced) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Intel.png using Guid(0243832f1d132e9489745addf705cced) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6bde38c42ec45a1386d20620fb734519') in 0.023339 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Games/Rust.png
+  artifactKey: Guid(fc88037157ee94e40abbc0f3439b0d1e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Rust.png using Guid(fc88037157ee94e40abbc0f3439b0d1e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cd337de1d7a6dc4864ecc5742485bc19') in 0.016824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Resources/Logos/IT/Beats.png
+  artifactKey: Guid(212f1b1ce894f42488b8c78ca9b9e035) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Beats.png using Guid(212f1b1ce894f42488b8c78ca9b9e035) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ed391147ec21e6ef5b1761ad8ecead05') in 0.018713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/IT/ASUS_.png
+  artifactKey: Guid(a07b1448a9bb85143a1d73cca55c077c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/ASUS_.png using Guid(a07b1448a9bb85143a1d73cca55c077c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '05b581b86e836eabfedace0becb09013') in 0.017723 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Resources/Logos/Games/Fall Guys_.png
+  artifactKey: Guid(d23b916e2d4c18641972a5657a56173d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Fall Guys_.png using Guid(d23b916e2d4c18641972a5657a56173d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '59a4d4627b70ad800c44090411a624f9') in 0.018219 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Resources/Logos/IT/Edge.png
+  artifactKey: Guid(e75e6bcc119387f479f31495f9f90467) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Edge.png using Guid(e75e6bcc119387f479f31495f9f90467) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '970d786050c0dbd141aa13fe38f6789e') in 0.025541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Resources/Logos/Games/Rust_.png
+  artifactKey: Guid(c2f9cf1a51c91d3458e93bbeaadac55a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Rust_.png using Guid(c2f9cf1a51c91d3458e93bbeaadac55a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cc1e7c755c8661eef12d27a353b7895a') in 0.016845 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/Logos/IT/macOS.png
+  artifactKey: Guid(1058c30b6175397478cb8107e8449c6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/macOS.png using Guid(1058c30b6175397478cb8107e8449c6d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5a39035635cfcfed9ad4a60e82fc3497') in 0.018669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Resources/Logos/IT/ASUS.png
+  artifactKey: Guid(30afb5447600b2d408ffdd081f1f1725) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/ASUS.png using Guid(30afb5447600b2d408ffdd081f1f1725) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ea00a3d5782c600bb3a7110d87b15f3f') in 0.019487 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/IT/Avira.png
+  artifactKey: Guid(7203df48e4b0fb241bb72e81fc88fab6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Avira.png using Guid(7203df48e4b0fb241bb72e81fc88fab6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f237594f5d73f52273c89ed2b385b0d7') in 0.029687 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Resources/Logos/Games/Fall Guys.png
+  artifactKey: Guid(244bca4d140bbac4ea95ae5125750dff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Fall Guys.png using Guid(244bca4d140bbac4ea95ae5125750dff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6b6b8b431c2336c11670c2a9e4899900') in 0.015795 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Logos/IT/Dell_.png
+  artifactKey: Guid(23d63f8d846cbd64a976b4b1451cc3aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Dell_.png using Guid(23d63f8d846cbd64a976b4b1451cc3aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f38ec42c4400e9f7e145d1891c48556c') in 0.061675 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/IT/Google_.png
+  artifactKey: Guid(0a812d41d4bca7a4ba7c993161872c46) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Google_.png using Guid(0a812d41d4bca7a4ba7c993161872c46) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3e4c0d5d15500da1a6ebef3463ab6c53') in 0.015915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/Logos/Games/Minecraft.png
+  artifactKey: Guid(7ed464034fb9f974397248a4adb343bc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Minecraft.png using Guid(7ed464034fb9f974397248a4adb343bc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '199df83e90b8654055cdd2c99fd9fcbc') in 0.015324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/Logos/IT/Chrome_.png
+  artifactKey: Guid(a0908d2c0a729e641a46d76821eea1f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Chrome_.png using Guid(a0908d2c0a729e641a46d76821eea1f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '722cda9c11380956e7d74a3c363cde77') in 0.018249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Games/Fallout_.png
+  artifactKey: Guid(a1d28f33610ea924283ef4e2627cf749) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Fallout_.png using Guid(a1d28f33610ea924283ef4e2627cf749) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5186cc6e7ea3df98ee803a43cd097b94') in 0.020940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/IT/msi.png
+  artifactKey: Guid(3d4652b84c8e0304eb34b5c3fac07503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/msi.png using Guid(3d4652b84c8e0304eb34b5c3fac07503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'bea655b806191c4ff979d3099e265fe4') in 0.027241 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/IT/Dell.png
+  artifactKey: Guid(1175d57ca3a426943a9a080fe406c4db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Dell.png using Guid(1175d57ca3a426943a9a080fe406c4db) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f19b820a56a4ef9b55cd8b21770b7c27') in 0.058111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Cars/Lancia_.png
+  artifactKey: Guid(3e4ef003f2c50e64d899effb3b7bfb8f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Lancia_.png using Guid(3e4ef003f2c50e64d899effb3b7bfb8f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e416020ea0cb73221c5594a757b6298a') in 0.021557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Logos/Cars/Mansory_.png
+  artifactKey: Guid(9f5bc64bbbaa083449cd1e15b013d77f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Mansory_.png using Guid(9f5bc64bbbaa083449cd1e15b013d77f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9102e094d6889bb4e462c7f01f439deb') in 0.014720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Resources/Logos/Drinks/7up_.png
+  artifactKey: Guid(66b32819fbeb6cd46bf1076e28a8882a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/7up_.png using Guid(66b32819fbeb6cd46bf1076e28a8882a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '36e769496503db1e2f5b3fedda6983d0') in 0.019586 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Resources/Logos/Cars/Ferrari_.png
+  artifactKey: Guid(0b54232df0f9686459e90b38884bd5fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Ferrari_.png using Guid(0b54232df0f9686459e90b38884bd5fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '03abc6a20e346490330fa5bc071c9b50') in 0.016627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Shops/New Balance.png
+  artifactKey: Guid(1e4030add744d3c4c963734837005e35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/New Balance.png using Guid(1e4030add744d3c4c963734837005e35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6b414364b99266995904a0b11ba8cc7f') in 0.026608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Logos/Shops/Gucci_.png
+  artifactKey: Guid(1b1f287678258b9499c49771bb42a2da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Gucci_.png using Guid(1b1f287678258b9499c49771bb42a2da) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6c5d336d723ac14b362d14345993a9f5') in 0.018772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Resources/Logos/Shops/Nike.png
+  artifactKey: Guid(ab113dfa0fe75064cabbd36c53900ca2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Nike.png using Guid(ab113dfa0fe75064cabbd36c53900ca2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '478f96bf8c73694adf9e49be381ed2c8') in 0.034438 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Restaurants/KFC_.png
+  artifactKey: Guid(a0406ad50b026ec488c272b09c0496ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Restaurants/KFC_.png using Guid(a0406ad50b026ec488c272b09c0496ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0ee82e975c6eb3104dad8443ea131d6c') in 0.036999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Resources/Logos/Restaurants/Burger King_.png
+  artifactKey: Guid(1a8d524597b27534192dcafe3b6552a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Restaurants/Burger King_.png using Guid(1a8d524597b27534192dcafe3b6552a4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '92ec2a2befab0ec7e4bfcf399913c71e') in 0.024842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Shops/ikea.png
+  artifactKey: Guid(9acb62504eafd1f41aaca3cbe382f4a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/ikea.png using Guid(9acb62504eafd1f41aaca3cbe382f4a7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4e1ec9b8257ede921fd529316f6814a4') in 0.020620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/Other/FedEx.png
+  artifactKey: Guid(e72d3ae88ec93914da57f5b9dafd93ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/FedEx.png using Guid(e72d3ae88ec93914da57f5b9dafd93ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '954460e59c09fa5475364b4d16aaec75') in 0.037373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Resources/Logos/IT/ThinkPad_.png
+  artifactKey: Guid(59a7e58984ed56346ac48a8dfd7d531e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/ThinkPad_.png using Guid(59a7e58984ed56346ac48a8dfd7d531e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4e8365c40ce6ebced6c5ba3983d98b84') in 0.024096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/Other/Shell.png
+  artifactKey: Guid(4061f702a64d70147b9e7dd463405152) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/Shell.png using Guid(4061f702a64d70147b9e7dd463405152) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'aeb418ad4098cfdc202648f393c57961') in 0.020608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/Resources/Logos/Shops/New Balance_.png
+  artifactKey: Guid(0967b6a4879a8a0449b8ad4e24df55d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/New Balance_.png using Guid(0967b6a4879a8a0449b8ad4e24df55d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '94b73b08781761c7188d07b0e329c4c5') in 0.030015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000125 seconds.
+  path: Assets/Resources/Logos/Shops/jumbo_.png
+  artifactKey: Guid(22b3c3cc636efec4a82c6ab210ffeddc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/jumbo_.png using Guid(22b3c3cc636efec4a82c6ab210ffeddc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5ed0dc782ae06fc29be442a93f8f098a') in 0.019117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Other/Hilton.png
+  artifactKey: Guid(03e7ee4ab4214da45be4d040e491caa3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/Hilton.png using Guid(03e7ee4ab4214da45be4d040e491caa3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7aa1e7b87cb4f53d7fdff6217ba0d179') in 0.016126 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Shops/EBay_.png
+  artifactKey: Guid(7e3fead41b006044680b17ee36dcffaa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/EBay_.png using Guid(7e3fead41b006044680b17ee36dcffaa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '02e73a803e12a19135be553004583a4c') in 0.016970 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Shops/Adidas_.png
+  artifactKey: Guid(87fa189f3dee6dd46a8cb7ee5dba5bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Adidas_.png using Guid(87fa189f3dee6dd46a8cb7ee5dba5bf5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b9520692b5a69d5f4e8c7adcc35fd5b9') in 0.016952 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Shops/h&m.png
+  artifactKey: Guid(e911ef432b293f747a728f8d2516ec04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/h&m.png using Guid(e911ef432b293f747a728f8d2516ec04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '67d14a27b1e2c21dde1628b55d2ce3ed') in 0.027508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Resources/Logos/Shops/ikea_.png
+  artifactKey: Guid(4bbf9667f9fd3084fb6050fc3f55ad29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/ikea_.png using Guid(4bbf9667f9fd3084fb6050fc3f55ad29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '49670f4454fc9cda8c4ae6283d877960') in 0.018305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Restaurants/Domino’s.png
+  artifactKey: Guid(5cafb9afb49998e47a9108177a5487d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Restaurants/Domino’s.png using Guid(5cafb9afb49998e47a9108177a5487d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4be32f29cecf44cf029914387daf27c9') in 0.042286 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Resources/Logos/Restaurants/Pizza Hut.png
+  artifactKey: Guid(b4ea21bf6024472429e2a318e1d5c389) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Restaurants/Pizza Hut.png using Guid(b4ea21bf6024472429e2a318e1d5c389) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9241c4d1cc659064a137f22ae93aff11') in 0.028751 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Shops/Tesco_.png
+  artifactKey: Guid(605d7cd02483d9f41bc7f221ea329f6c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Tesco_.png using Guid(605d7cd02483d9f41bc7f221ea329f6c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6a99ac26ef30b9111dd3070639b99a52') in 0.019794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/Logos/Shops/LEGO_.png
+  artifactKey: Guid(3b21a17ddc3cde24396a37fb737f8de9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/LEGO_.png using Guid(3b21a17ddc3cde24396a37fb737f8de9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7152c5903a02f978eb2dffa8eda67bdf') in 0.017696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/IT/Wi-Fi.png
+  artifactKey: Guid(489bde9061a39354fbc99deb1680d982) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Wi-Fi.png using Guid(489bde9061a39354fbc99deb1680d982) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3df3b5b55a8eb67b9ecc01f3b5d887b9') in 0.016244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Restaurants/mcdonald's.png
+  artifactKey: Guid(f0f6ab8005a00194596791077ed085c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Restaurants/mcdonald's.png using Guid(f0f6ab8005a00194596791077ed085c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '825b3a51cc0ba806ddfdc15fe395078d') in 0.020678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Other/BP.png
+  artifactKey: Guid(8263bcac951df7649aa6c0cc1c4c3d45) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/BP.png using Guid(8263bcac951df7649aa6c0cc1c4c3d45) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cff827c0e8b449dcabf3c4babe08fc08') in 0.019038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Shops/Louis Vuitton.png
+  artifactKey: Guid(fa445d4dc8e962d4c9af911e3fbbc313) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Louis Vuitton.png using Guid(fa445d4dc8e962d4c9af911e3fbbc313) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0131276d0de0d8ca1109cc1b90277254') in 0.022097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab
+  artifactKey: Guid(4e3dd9a9607da46da8125b4b59a18db2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab using Guid(4e3dd9a9607da46da8125b4b59a18db2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '24daea175ca2339c7f8d4be1bedaf312') in 0.036315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/1024x768.prefab
+  artifactKey: Guid(ac0a546bb4fb349229fc5824b288ec00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/1024x768.prefab using Guid(ac0a546bb4fb349229fc5824b288ec00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd516897f2cea287d546c757285462151') in 0.013248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/1024x768.prefab
+  artifactKey: Guid(53084846ca7a14a878485a5db71fda00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/1024x768.prefab using Guid(53084846ca7a14a878485a5db71fda00) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '43f7439271cd1eb17536d810c714eaba') in 0.014361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab
+  artifactKey: Guid(b2a8ac187bcca47a286cb00c8094da36) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/BANNER.prefab using Guid(b2a8ac187bcca47a286cb00c8094da36) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '61a25bd8f6059d2cdf26ca5037be546f') in 0.014425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AppOpen/768x1024.prefab
+  artifactKey: Guid(7d86e5c9e525f4fadbbea7ee54246b94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AppOpen/768x1024.prefab using Guid(7d86e5c9e525f4fadbbea7ee54246b94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e417eb7548d15b4628200d69b52c14e5') in 0.014663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Scripts/FZScripts/UI/FZButton.cs
+  artifactKey: Guid(f439d5ce47ea27f4b8957ac12222894a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FZScripts/UI/FZButton.cs using Guid(f439d5ce47ea27f4b8957ac12222894a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3595758bc9d66731c884e63eaa954b61') in 0.011397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdInspector/768x1024.prefab
+  artifactKey: Guid(d09dfea4c722a4e239e771200d3639cc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdInspector/768x1024.prefab using Guid(d09dfea4c722a4e239e771200d3639cc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cdaf38fc5f3e582b36b497fac8c78fc6') in 0.012847 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Resources/Logos/TV/History.png
+  artifactKey: Guid(c5ec400a0c3c21e47a21524e00d74fa5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/TV/History.png using Guid(c5ec400a0c3c21e47a21524e00d74fa5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c581b539377aaa6c9d352f63162f3c30') in 0.017291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Resources/Logos/Shops/Tommy Hilfiger_.png
+  artifactKey: Guid(12e1277effb212d4bbc1b3b399822e18) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Tommy Hilfiger_.png using Guid(12e1277effb212d4bbc1b3b399822e18) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7ee6dd7aec39ac2e1daca3bf6a914987') in 0.018914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Resources/Logos/TV/TV Paprika.png
+  artifactKey: Guid(78d2e768e85498044a18d098d3dbaab7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/TV/TV Paprika.png using Guid(78d2e768e85498044a18d098d3dbaab7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd9004398f8b0233fd42e8c02e99f07b6') in 0.017844 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/468x60.png
+  artifactKey: Guid(74358f5fb13a549aabac4a5a7ac76739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/468x60.png using Guid(74358f5fb13a549aabac4a5a7ac76739) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7c2bc8e816dd026808645bd206069758') in 0.016826 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab
+  artifactKey: Guid(9e579ef4793d34e79be6a216c0b67d78) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Interstitials/768x1024.prefab using Guid(9e579ef4793d34e79be6a216c0b67d78) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c504fb7750041fcbe500d22c70451854') in 0.013105 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Resources/Logos/Shops/Under Armour_.png
+  artifactKey: Guid(9d2fff4d47a921e46be25ded19f321e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Under Armour_.png using Guid(9d2fff4d47a921e46be25ded19f321e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '63313ad7e1f28e0ccfa1b26cd30a51a9') in 0.020142 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/320x480.png
+  artifactKey: Guid(77d9c04b43d404f44ab60d7159b279bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/320x480.png using Guid(77d9c04b43d404f44ab60d7159b279bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b8dc730ba8245fad74dc9c8f7e4c273b') in 0.020744 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Scripts/FZScripts/UI/FZText.cs
+  artifactKey: Guid(0d09170b36a4c7544baa725d1c71d794) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FZScripts/UI/FZText.cs using Guid(0d09170b36a4c7544baa725d1c71d794) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd77c00f83eb7eff058296f59c1f32234') in 0.008927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Resources/Logos/Shops/Vans_.png
+  artifactKey: Guid(a659dc05e7216244180ef0932f07baca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Vans_.png using Guid(a659dc05e7216244180ef0932f07baca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd27c960621f1495f790c45eb9c6824d6') in 0.017944 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/768x1024.png
+  artifactKey: Guid(8a53f9c63a5e94b14a98698a7b07365b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/768x1024.png using Guid(8a53f9c63a5e94b14a98698a7b07365b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '53d0ee8dfcadeb263828697b55e19aef') in 0.020378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Resources/Logos/TV/Discovery_.png
+  artifactKey: Guid(31e286fef2864804093d64e72a65028e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/TV/Discovery_.png using Guid(31e286fef2864804093d64e72a65028e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0eee2d7ddcd522a31e9cea710d49c765') in 0.019331 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Logos/TV/Disney.png
+  artifactKey: Guid(895f3ba0541ed4d458454058b8af3c02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/TV/Disney.png using Guid(895f3ba0541ed4d458454058b8af3c02) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4449c5b5b4b33958b382b75d2977fb9d') in 0.026841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/1024x768.png
+  artifactKey: Guid(4c69db43dbd474a2987be5807129b4cc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/AdImages/1024x768.png using Guid(4c69db43dbd474a2987be5807129b4cc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '852de4c17bf668c77c65d0b0ad5724ae') in 0.018211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/Ump/ConsentForm.prefab
+  artifactKey: Guid(32087445d9e7f4577ae9170a6b11f114) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/GoogleMobileAds/Editor/Resources/Ump/ConsentForm.prefab using Guid(32087445d9e7f4577ae9170a6b11f114) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c1ab2ca71d629a0a60171975afb7fc6a') in 0.015430 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 27
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Shops/Tesco.png
+  artifactKey: Guid(2d664ac8d964aab4da14bc8265d46bf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Shops/Tesco.png using Guid(2d664ac8d964aab4da14bc8265d46bf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f3508dcb1354dec195808e2d2a12c141') in 0.018224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Resources/Logos/Other/Olympics.png
+  artifactKey: Guid(584fd2f732a00a14ebcf578fa25c1276) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/Olympics.png using Guid(584fd2f732a00a14ebcf578fa25c1276) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '00a842019bec60daf3e0e4495343e17e') in 0.033321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Resources/Logos/Games/Ubisoft.png
+  artifactKey: Guid(371208bce13410147b6523d7f400e7f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Ubisoft.png using Guid(371208bce13410147b6523d7f400e7f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1c102cec71eb773d982ef4854560010c') in 0.015934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000097 seconds.
+  path: Assets/Resources/Logos/Drinks/Fanta.png
+  artifactKey: Guid(1a2de59376707ac47b840a38545a43b5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Drinks/Fanta.png using Guid(1a2de59376707ac47b840a38545a43b5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '59da78b8c3a518e469b90333ebe07ff0') in 0.021614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/Resources/Logos/IT/Acer.png
+  artifactKey: Guid(8bcb7297aae169349b4bc6b54819a168) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Acer.png using Guid(8bcb7297aae169349b4bc6b54819a168) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e292c492327c1fbe277b18460efbb8af') in 0.018125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/ExternalDependencyManager/Editor/1.2.175/Google.JarResolver.dll
+  artifactKey: Guid(af3ced639768447f9ece45f038c5ee35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/ExternalDependencyManager/Editor/1.2.175/Google.JarResolver.dll using Guid(af3ced639768447f9ece45f038c5ee35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd6b4b50cdc1710cbf204f00296571a59') in 0.016820 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/Logos/IT/AT&T.png
+  artifactKey: Guid(6d42b4d5868901040a4a924fabecdc61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/AT&T.png using Guid(6d42b4d5868901040a4a924fabecdc61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '647c621e0ba4ee5412e7ef7a925424c2') in 0.017340 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/Resources/Logos/Games/Monopoly.png
+  artifactKey: Guid(b311af5c79cbe2a4591b0de60f5a9227) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Monopoly.png using Guid(b311af5c79cbe2a4591b0de60f5a9227) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2d487c3988c7bbd9c03dbd61f8bcea68') in 0.019859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Resources/Logos/Airlines/Flydubai_.png
+  artifactKey: Guid(b63f2cec0b320484db44685f17f887b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Airlines/Flydubai_.png using Guid(b63f2cec0b320484db44685f17f887b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7e0d3083a3a43c3f38ae3c8f009f21f4') in 0.023530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Resources/Logos/Apps/yahoo!.png
+  artifactKey: Guid(2c809d5c96bfa5442879f049847648d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/yahoo!.png using Guid(2c809d5c96bfa5442879f049847648d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b6f25fc54852a555f3337b50fa1a61bb') in 0.018204 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Resources/Logos/Cars/Arctic Cat_.png
+  artifactKey: Guid(d175f14ce8637234a938e363daa19f29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Arctic Cat_.png using Guid(d175f14ce8637234a938e363daa19f29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '863f8cca99711f95cc6b60f2357c7056') in 0.016274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Resources/Logos/Airlines/American Airlines_.png
+  artifactKey: Guid(2f7a002c7011dca459557409399dbd56) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Airlines/American Airlines_.png using Guid(2f7a002c7011dca459557409399dbd56) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4b9aaf7ffbe28070d55cf2704abde5e2') in 0.016592 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Resources/Logos/Apps/YouTube.png
+  artifactKey: Guid(bf497718fd75ba2489d2cb45cae33466) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/YouTube.png using Guid(bf497718fd75ba2489d2cb45cae33466) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ab9c84b283ae4ad66aa0bc9e2691145b') in 0.021206 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Resources/Logos/Cars/Peugeot.png
+  artifactKey: Guid(46c2bb0622bcd7a4189e0c5f53ed635b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Peugeot.png using Guid(46c2bb0622bcd7a4189e0c5f53ed635b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e07c06504ef8613e0d99503f2bb3865c') in 0.018201 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Resources/Logos/Apps/TikTok_.png
+  artifactKey: Guid(ef360cb277640ed42a5e12401e536515) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/TikTok_.png using Guid(ef360cb277640ed42a5e12401e536515) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0384935f101b0a05e463672f929325e3') in 0.023955 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/Resources/Logos/Games/Death Stranding.png
+  artifactKey: Guid(87be5809ac5400b4e8455fd5b4391abc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Death Stranding.png using Guid(87be5809ac5400b4e8455fd5b4391abc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8d026d9e1c1ec32f798e75107c0183c7') in 0.018728 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Logos/Airlines/Austrian_.png
+  artifactKey: Guid(d32826403e0b7f84bb945447f807bb07) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Airlines/Austrian_.png using Guid(d32826403e0b7f84bb945447f807bb07) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '40d9dbcb476bc200c7fe53086e912bc5') in 0.016528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Resources/Logos/Food/Lays.png
+  artifactKey: Guid(cf88219c56200e8499ca3d1ccd01f994) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Lays.png using Guid(cf88219c56200e8499ca3d1ccd01f994) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5555a36b962db01a207b4529cf6a1c83') in 0.019982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/Resources/Logos/IT/Nvidia.png
+  artifactKey: Guid(f80379a644504084fa0a279bcdbb1a9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/IT/Nvidia.png using Guid(f80379a644504084fa0a279bcdbb1a9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b2622aff7acd25b2a9a5ce82539aaf10') in 0.017421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Resources/Logos/Games/Monopoly_.png
+  artifactKey: Guid(5991fa3e5edddcb4584f2d5ceddf5c1a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Games/Monopoly_.png using Guid(5991fa3e5edddcb4584f2d5ceddf5c1a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '920ca4a373bf24ebaffcf807a87b9504') in 0.019133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Resources/Logos/Other/Hilton_.png
+  artifactKey: Guid(51660e77773ec7e41ae859d2856e4cda) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Other/Hilton_.png using Guid(51660e77773ec7e41ae859d2856e4cda) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c0689d3ee250205fabc9a8e0363f42b8') in 0.021865 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Resources/Logos/Cars/Cadillac.png
+  artifactKey: Guid(54d21c9a41a8d4f4ab867fdb2c0883e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Cadillac.png using Guid(54d21c9a41a8d4f4ab867fdb2c0883e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '725205a7825a63afca650cb72a8e6f02') in 0.016397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Scripts/FZScripts/FZMaterial.cs
+  artifactKey: Guid(5cdea7bfc21164541b08573238e8172f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Scripts/FZScripts/FZMaterial.cs using Guid(5cdea7bfc21164541b08573238e8172f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '86f55fb4e6318eb1ed93e5d073686dd1') in 0.009560 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000119 seconds.
+  path: Assets/Resources/Logos/Cars/Daihatsu.png
+  artifactKey: Guid(98d0f535342523942aef96c660b4bc70) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Cars/Daihatsu.png using Guid(98d0f535342523942aef96c660b4bc70) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2b952086b265546769203d5407316139') in 0.015994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/Resources/Logos/Apps/Netflix_.png
+  artifactKey: Guid(23f5bf643480c474099abb7a00ef06b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Apps/Netflix_.png using Guid(23f5bf643480c474099abb7a00ef06b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6459884d4fdf6e85a1c0645ae28e8618') in 0.033008 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Resources/Logos/Food/Danone.png
+  artifactKey: Guid(b3ea6c5d5010c27439814dea2859fe11) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Resources/Logos/Food/Danone.png using Guid(b3ea6c5d5010c27439814dea2859fe11) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f2bfde871f66e1c8e6a04e8591eb995d') in 0.020563 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3

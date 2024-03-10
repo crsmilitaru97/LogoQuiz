@@ -6,6 +6,8 @@ public class Values : MonoBehaviour
 {
     public FZText pointsTotalText, ticketsTotalText;
 
+    public Color accentColor;
+
     public static int tickets;
     public static int points;
 
@@ -31,7 +33,8 @@ public class Values : MonoBehaviour
         helpUsed = PlayerPrefs.GetInt("hintsUsed", 0);
         #endregion
 
-        pointsTotalText.text = points.ToString();
+        if (pointsTotalText != null)
+            pointsTotalText.text = points.ToString();
         if (ticketsTotalText != null)
             ticketsTotalText.text = tickets.ToString();
     }
@@ -48,10 +51,12 @@ public class Values : MonoBehaviour
         PlayerPrefs.SetInt("points", points);
     }
 
-    public void AddToTickets(int value)
+    public void AddToTickets(int value, bool updateUI = false)
     {
         tickets += value;
-        ticketsTotalText.SlowlyUpdateNumberText(tickets);
         PlayerPrefs.SetInt("tickets", tickets);
+
+        if (updateUI)
+            ticketsTotalText.SlowlyUpdateNumberText(tickets);
     }
 }

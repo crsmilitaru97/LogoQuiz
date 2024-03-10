@@ -7,16 +7,14 @@ using static LogosManager;
 
 public class Menu : MonoBehaviour
 {
-    public static Menu instance;
+    public static Menu Instance;
 
-    public Button[] dailyRewardButtons;
+    public static CategoryUI selectedCategoryUI;
+
+    [Header("Daily Reward")]
     public Button dailyRewardButton;
+    public FZButton[] dailyRewardButtons;
     public Text dailyRewardDayText;
-
-    [Header("Design")]
-    public Color iconsColor;
-    public Image[] icons;
-    public Image[] tops;
 
     [Header("Panels")]
     public GameObject mainPanel;
@@ -26,12 +24,14 @@ public class Menu : MonoBehaviour
     public GameObject dailyRewardPanel;
 
     [Header("Categories")]
-    public Text categoriesTicketsText;
+    public FZText categoriesTicketsText;
     public ScrollRect categoryScroll;
     public RectTransform categoryContent;
-
-    [Header("Settings")]
-    public Text versionText;
+    public FZText buyCategoryPriceText;
+    public GameObject buyCategoryGroup;
+    public FZButton buyCategoryButton;
+    public Text buyCategoryTitle;
+    public GameObject categoryPrefab;
 
     [Header("Stats")]
     public Text wordsDoneText;
@@ -50,43 +50,30 @@ public class Menu : MonoBehaviour
     public static Transform lastClickedLevel;
     public static int categoryScrollIndex;
 
-    public GameObject categoryPrefab;
-    readonly int[] rewardValues = { 15, 25, 3, 50, 75 };
+    readonly int[] rewardValues = { 15, 25, 3, 50, 75, 10 };
 
     #region BasicEvents
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
+
+        allPanels = new List<GameObject> { mainPanel, catPanel, statsPanel, settingsPanel, dailyRewardPanel };
     }
 
     void Start()
     {
         Application.targetFrameRate = 60;
 
-        allPanels = new List<GameObject> { mainPanel, catPanel, statsPanel, settingsPanel };
+        dailyRewardDayText.text = (rewardDayIndex + 1).ToString();
+
 
         foreach (var category in LogosManager.Manager.Categories)
         {
             var catobj = Instantiate(categoryPrefab, categoryContent).GetComponent<CategoryUI>();
-            catobj.currentCategory = category;
+            catobj.category = category;
             catobj.Refresh();
         }
-
-        #region Set Colors
-        foreach (var icon in icons)
-            icon.color = iconsColor;
-
-        versionText.color = iconsColor;
-
-        foreach (var icon in tops)
-            icon.color = iconsColor;
-
-        foreach (var dailyReward in dailyRewardButtons)
-        {
-            dailyReward.GetComponent<Image>().color = iconsColor;
-        }
-        #endregion
 
         #region Save Scroll
         //int lastScrollIndex = PlayerPrefs.GetInt("categoryScrollIndex", 0);
@@ -125,7 +112,7 @@ public class Menu : MonoBehaviour
         }
         else if (rewardDate.Date != DateTime.Now.Date.AddDays(1))
         {
-            PlayerPrefs.SetInt("todayRewardIndex", 0);
+            FZSave.Int.Set("todayRewardIndex", 0);
             FZSave.TimeDate.Set("nextRewardDate", DateTime.Now.Date);
 
             dailyRewardButton.interactable = true;
@@ -186,15 +173,30 @@ public class Menu : MonoBehaviour
             if (!mainPanel.activeSelf)
                 ShowPanel(mainPanel);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (buyCategoryGroup.activeSelf && buyCategoryGroup.GetComponent<Animator>().GetBool("shown"))
+                buyCategoryGroup.GetComponent<Animator>().SetBool("shown", false);
+        }
     }
     #endregion
 
+    public void UnlockCategory()
+    {
+        FZSave.Bool.Set($"{selectedCategoryUI.category.name}Locked", false);
+        Values.Instance.AddToTickets(-selectedCategoryUI.category.priceToUnlock);
+        selectedCategoryUI.Lock(false);
+        buyCategoryGroup.GetComponent<Animator>().SetBool("shown", false);
+    }
+
     public void ShowDailyReward()
     {
-        rewardDayIndex = PlayerPrefs.GetInt("todayRewardIndex", 0);
+        rewardDayIndex = FZSave.Int.Get("todayRewardIndex", 0);
         dailyRewardDayText.text = (rewardDayIndex + 1).ToString();
         dailyRewardButtons[rewardDayIndex].interactable = true;
-        dailyRewardButtons[rewardDayIndex].transform.GetChild(1).GetComponent<Image>().color = Color.white;
+        dailyRewardButtons[rewardDayIndex].transform.GetChild(0).GetComponent<Text>().color = Color.gray;
+        dailyRewardButtons[rewardDayIndex].transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().color = Color.gray;
 
         dailyRewardPanel.SetActive(true);
     }
@@ -204,17 +206,17 @@ public class Menu : MonoBehaviour
         FZSave.TimeDate.Set("nextRewardDate", DateTime.Now.Date.AddDays(1));
         dailyRewardButton.interactable = false;
 
-        if (rewardDayIndex != 2)
-            Values.Instance.AddToPoints(rewardValues[rewardDayIndex]);
-        else
+        if (rewardDayIndex == 2 || rewardDayIndex == 5)
             Values.Instance.AddToTickets(rewardValues[rewardDayIndex]);
+        else
+            Values.Instance.AddToPoints(rewardValues[rewardDayIndex]);
 
-        if (rewardDayIndex < 4)
+        if (rewardDayIndex < 5)
             rewardDayIndex += 1;
         else
             rewardDayIndex = 0;
 
-        PlayerPrefs.SetInt("todayRewardIndex", rewardDayIndex);
+        FZSave.Int.Set("todayRewardIndex", rewardDayIndex);
 
         dailyRewardPanel.SetActive(false);
     }

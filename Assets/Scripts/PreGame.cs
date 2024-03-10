@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PreGame : MonoBehaviour
@@ -13,8 +12,6 @@ public class PreGame : MonoBehaviour
 
     private void Start()
     {
-        top.color = Menu.instance.iconsColor;
-
         titleText.text = LogosManager.currentCategory.name;
         doneText.text = $"{LogosManager.currentCategory.wordsDoneCount}/{LogosManager.currentCategory.Logos.Length}";
 
@@ -46,7 +43,7 @@ public class PreGame : MonoBehaviour
     public void BackToMenu(bool showCategories)
     {
         Menu.showCategories = showCategories;
-        SceneManager.LoadScene(0);
+        FZCanvas.Instance.FadeLoadScene(0, Values.Instance.accentColor);
     }
 
     private IEnumerator LoadingLogosAnimation()

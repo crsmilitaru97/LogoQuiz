@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
@@ -59,6 +59,9 @@ public class Settings : MonoBehaviour
             color.a = 0.2f;
         }
         button.color = color;
+
+        button.transform.GetChild(0).gameObject.SetActive(enabled);
+        button.transform.GetChild(1).gameObject.SetActive(!enabled);
     }
 
     public void OpenURL(string url)
@@ -66,7 +69,7 @@ public class Settings : MonoBehaviour
         Application.OpenURL(url);
     }
 
-    public void ClearPrefs()
+    public void ClearGameData()
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(0);

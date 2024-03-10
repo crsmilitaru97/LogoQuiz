@@ -1,18 +1,15 @@
-﻿using GoogleMobileAds.Api;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static LogosManager;
 
 public class Logic : MonoBehaviour
 {
     public static Logic Instance;
-    public GameObject finalKeyPrefab;
 
-    public GameObject[] panels;
-    public Image[] icons, specialButtons;
+    public Image[] icons;
+    public GameObject finalKeyPrefab;
     public Image finalWordBar, lettersBar;
     public Image image, imageFinal;
     public Image flag;
@@ -21,10 +18,6 @@ public class Logic : MonoBehaviour
     public Text hintText;
 
     public Transform finalWordParent;
-    public GameObject nextPanel;
-    public GameObject quitPanel;
-    public GameObject helpPanel;
-    public GameObject rewardConfirmMessage;
 
     public Text perfectText;
 
@@ -33,14 +26,20 @@ public class Logic : MonoBehaviour
 
     public FZButton rightIndicator, leftIndicator;
 
+    [Header("Panels")]
+    public GameObject nextPanel;
+    public GameObject quitPanel;
+    public GameObject helpPanel;
+    public GameObject rewardPanel;
+
     [Header("Help")]
     public Button helpButton;
     public Button hintButton;
     public Button revealButton;
     public Button solveButton;
 
-    private string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZȘȚÂĂÎ";
-    private int currentIndexInWord;
+    private readonly string[] chars = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+    private readonly string[] ro_chars = { "Ș", "Ț", "Â", "Ă", "Î" };
 
     private bool isHintShown;
     private bool isLettersRevealed;
@@ -53,50 +52,35 @@ public class Logic : MonoBehaviour
     public List<Key> FinalKeys = new List<Key>();
 
     public static Key currentFinalKey;
+    private List<GameObject> allPanels;
 
     #region BasicEvents
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
+
+        allPanels = new List<GameObject> { nextPanel, quitPanel, helpPanel, rewardPanel };
     }
 
     private void Start()
     {
         AdsManager.Instance.LoadAd();
+        AdsManager.Instance.LoadBannerAd();
 
         #region Colors
+        FZCanvas.Instance.fadeColor = currentCategory.color;
         finalWordBar.color = currentCategory.color;
-        lettersBar.color = currentCategory.color;
         foreach (var icon in icons)
         {
             icon.color = currentCategory.color;
         }
-        foreach (var icon in specialButtons)
-        {
-            icon.color = currentCategory.color;
-        }
-        Color.RGBToHSV(currentCategory.color, out float h, out float s, out float v);
-        s /= 3;
-
-
         #endregion
 
         for (int i = 0; i < lettersBar.transform.childCount; i++)
         {
             Keys.Add(lettersBar.transform.GetChild(i).GetComponent<Key>());
         }
-
-        //for (int i = 0; i < finalWordParent.transform.childCount; i++)
-        //{
-        //    finalKeys.Add(finalWordParent.transform.GetChild(i).GetComponent<Key>());
-        //    //var newColor = finalWordParent.transform.GetChild(i).GetComponent<Button>().colors;
-        //    //newColor.disabledColor = Color.HSVToRGB(h, s, v);
-        //    //finalWordParent.transform.GetChild(i).GetComponent<Button>().colors = newColor;
-
-        //    FZColors.ChangeButtonColors(finalWordParent.transform.GetChild(i).GetComponent<Button>(), Color.white, currentCategory.color);
-        //}
-
 
         SetLogo();
         CheckPoints();
@@ -164,10 +148,12 @@ public class Logic : MonoBehaviour
         foreach (var key in Keys)
         {
             key.value = string.Empty;
+            key.isCorrect = false;
             key.GetComponent<Button>().interactable = true;
             key.GetComponentInChildren<Text>().text = string.Empty;
             key.gameObject.SetActive(true);
         }
+        finalWordBar.GetComponent<Animator>().SetBool("expanded", false);
 
         foreach (var key in FinalKeys)
         {
@@ -233,7 +219,6 @@ public class Logic : MonoBehaviour
         }
 
         hintButton.gameObject.SetActive(!string.IsNullOrEmpty(currentLogo.hint));
-        revealButton.gameObject.SetActive(!currentLogo.isGuess);
     }
 
     private void SetWriteGroup()
@@ -241,51 +226,25 @@ public class Logic : MonoBehaviour
         helpButton.gameObject.SetActive(true);
         groupWrite.SetActive(true);
 
-        finalWordBar.gameObject.SetActive(false);
-        finalWordBar.gameObject.SetActive(true);
-
         List<string> letters = new List<string>();
+
         foreach (var letter in currentLogo.name)
         {
             if (!Values.Symbols.Contains(letter.ToString()))
-                letters.Add(letter.ToString());
+                letters.Add(letter.ToString().ToUpper());
         }
-        List<char> choosedChars = new List<char>();
-        for (int i = letters.Count + 1; i < 15; i++)
+
+        while (letters.Count < Keys.Count)
         {
-            char randChar;
-            do
-                randChar = chars[UnityEngine.Random.Range(0, chars.Length)];
-            while (choosedChars.Contains(randChar));
-
-            choosedChars.Add(randChar);
-            letters.Add(randChar.ToString());
+            letters.Add(chars.RandomItem());
         }
-        choosedChars.Clear();
 
-        //for (int i = 0; i < finalKeys.Count; i++)
-        //{
-        //    if (i < currentLogo.name.Length)
-        //    {
-        //        finalKeys[i].isSymbol = (symbols.Contains(currentLogo.name[i].ToString()));
-
-        //        if (finalKeys[i].isSymbol)
-        //            finalKeys[i].value = currentLogo.name[i].ToString();
-
-        //        finalKeys[i].RenderValue();
-        //    }
-        //    else
-        //        finalKeys[i].gameObject.SetActive(false);
-        //}
-
-        //HighlightKey(0);
-
-        letters.Sort();
+        letters.Shuffle();
 
         for (int i = 0; i < Keys.Count; i++)
         {
-            Keys[i].value = letters[i].ToString().ToUpper();
-            Keys[i].GetComponentInChildren<Text>().text = Keys[i].value;
+            Keys[i].value = letters[i];
+            Keys[i].RefreshUI();
         }
     }
 
@@ -302,7 +261,7 @@ public class Logic : MonoBehaviour
 
     public void HideAllPanels()
     {
-        foreach (var item in panels)
+        foreach (var item in allPanels)
         {
             item.SetActive(false);
         }
@@ -319,23 +278,19 @@ public class Logic : MonoBehaviour
             if (Settings.vibrationEnabled)
                 Handheld.Vibrate();
 
-            if (currentLogo.isGuess)
-                Values.Instance.AddToPoints(10);
-            else
-                Values.Instance.AddToPoints(5);
+            Values.Instance.AddToPoints(5);
 
             perfectText.gameObject.SetActive(true);
-            perfectText.text = Texts.perfects.RandomItem();
+
+            perfectText.text = FZTranslations.GetDynamicText(UnityEngine.Random.Range(0, 2));
         }
 
         FZSave.Bool.Set($"{currentCategory.name}_{currentLogo.name}_done", true);
 
         currentLogo.isDone = true;
 
-        currentIndexInWord = 0;
-
         wordFinal.text = currentLogo.name;
-        imageFinal.sprite = Resources.Load<Sprite>($"LogosFull/{currentCategory.name}/{currentLogo.name}");
+        imageFinal.sprite = currentLogo.fullImage;
 
         yearsFinal.text = string.Empty;
         if (currentLogo.startYear > 0)
@@ -345,10 +300,9 @@ public class Logic : MonoBehaviour
 
 
         ShowPanel(nextPanel);
-        if (currentLogo.isGuess && currentLogo.guessed || !currentLogo.isGuess)
-        {
-            Values.Instance.AddToTickets(1);
-        }
+
+        Values.Instance.AddToTickets(1, true);
+
         AdsManager.Instance.ShowAd();
     }
 
@@ -373,10 +327,13 @@ public class Logic : MonoBehaviour
 
     public void GetReward()
     {
+        AdsManager.Instance.ShowRewardedAd();
     }
 
-    public void ClaimReward(GameObject rewardPanel)
+    public void ClaimReward()
     {
+        HideAllPanels();
+        Values.Instance.AddToPoints(25);
     }
 
     public void SkipBack()
@@ -389,7 +346,9 @@ public class Logic : MonoBehaviour
 
     public void Quit(bool showCategories)
     {
-        SceneManager.LoadScene(0);
+        AdsManager.Instance.DestroyBannerAd();
+        Menu.showCategories = showCategories;
+        FZCanvas.Instance.FadeLoadScene(0, Values.Instance.accentColor);
     }
 
     private void CheckPoints()
@@ -408,6 +367,18 @@ public class Logic : MonoBehaviour
 
     public void ClearFinalKeys()
     {
+        foreach (var key in FinalKeys)
+        {
+            key.value = string.Empty;
+            key.RefreshUI();
+        }
+        Key.SelectKey(FinalKeys[0]);
+
+        foreach (var key in Keys)
+        {
+            key.GetComponent<FZButton>().interactable = true;
+        }
+
         finalWordBar.GetComponent<Animator>().SetBool("expanded", false);
     }
 
@@ -433,31 +404,28 @@ public class Logic : MonoBehaviour
     {
         isLettersRevealed = true;
         revealButton.interactable = false;
-        bool[] posRevealed = new bool[currentLogo.name.Length];
 
         ClearFinalKeys();
-        int i = Mathf.RoundToInt((float)currentLogo.name.Length / 3f);
-        foreach (var key in Keys)
+
+        for (int i = 0; i < FinalKeys.Count / 2; i++)
         {
-            if (i > 0)
+            var fkey = FinalKeys.RandomItem();
+            while (fkey.isCorrect)
             {
-                if (currentLogo.name.ToUpperInvariant().Contains(key.value.ToUpperInvariant()))
+                fkey = FinalKeys.RandomItem();
+            }
+            foreach (var key in Keys)
+            {
+                if (key.value == fkey.neededValue)
                 {
-                    currentIndexInWord = currentLogo.name.ToUpperInvariant().IndexOf(key.value.ToUpperInvariant());
-                    if (!posRevealed[currentIndexInWord])
-                    {
-                        posRevealed[currentIndexInWord] = true;
-                        //Change(key);
-                        i--;
-                    }
+                    currentFinalKey = fkey;
+                    Key.SelectKey(key);
                 }
             }
         }
-        currentIndexInWord = 0;
-        //while (finalKeys[currentIndexInWord].value != string.Empty)
-        // currentIndexInWord++;
-
         HideAllPanels();
+
+        Key.GetNextFinalKey(true);
     }
     #endregion
 }

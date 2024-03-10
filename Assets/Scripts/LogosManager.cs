@@ -20,8 +20,6 @@ public class LogosManager : MonoBehaviour
         int i = 0;
         foreach (var category in Categories)
         {
-            category.locked = FZSave.Bool.Get($"{category.name}Unlocked", false);
-
             foreach (var logo in category.Logos)
             {
                 logo.fullImage = Resources.Load<Sprite>("Logos/" + category.name + "/" + logo.name);
@@ -34,8 +32,7 @@ public class LogosManager : MonoBehaviour
                     logo.partImage = logo.fullImage;
             }
         }
-
-        Categories[0].locked = false;
+        FZSave.Bool.Set($"{Categories[0].name}Locked", false);
     }
 
 
@@ -43,26 +40,23 @@ public class LogosManager : MonoBehaviour
     public class Logo
     {
         public string name;
-        [HideInInspector]
-        public int ID;
-        [HideInInspector]
-        public Sprite fullImage;
-        [HideInInspector]
-        public Sprite partImage;
+
         public string hint = string.Empty;
         [Header("Details")]
-        public string country;
         public int startYear;
         public int endYear;
+        public string country;
         [Multiline]
         public string about = string.Empty;
 
         [HideInInspector]
         public bool isDone = false;
         [HideInInspector]
-        public bool isGuess = false;
+        public int ID;
         [HideInInspector]
-        public bool guessed = false;
+        public Sprite fullImage;
+        [HideInInspector]
+        public Sprite partImage;
     }
 
     [Serializable]
@@ -80,10 +74,7 @@ public class LogosManager : MonoBehaviour
         public Logo[] Logos;
         //public BonusLogo[] bonusWords;
 
-
-        [HideInInspector]
         public int priceToUnlock = 0;
-        [HideInInspector]
         public int wordsDoneCount = 0;
         [HideInInspector]
         public bool randomized = false;

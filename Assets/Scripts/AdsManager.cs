@@ -185,7 +185,7 @@ public class AdsManager : MonoBehaviour
 
     private void RegisterReloadHandler(RewardedAd ad)
     {
-        //Values.AddPoints(25);
+        Logic.Instance.ShowPanel(Logic.Instance.rewardPanel);
 
         ad.OnAdFullScreenContentClosed += () =>
         {

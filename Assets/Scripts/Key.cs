@@ -14,7 +14,7 @@ public class Key : MonoBehaviour
     public Key fromKey;
     public int index;
     public bool isFinal = false;
-    bool isCorrect = false;
+    public bool isCorrect = false;
 
     public void RefreshUI()
     {
@@ -32,31 +32,44 @@ public class Key : MonoBehaviour
         keyBtn.buttonText.text = value;
     }
 
-    public void SelectKey(Key selectedKey)
+    public void Highlight()
     {
-        if (isFinal)
+        GetComponent<RectTransform>().sizeDelta = keyZoomSize;
+    }
+
+    public void Unhighlight()
+    {
+        GetComponent<RectTransform>().sizeDelta = keySize;
+    }
+
+    public static void SelectKey(Key selectedKey)
+    {
+        if (selectedKey.isFinal)
         {
-            PlayerPrefs.SetInt("deletedLetters", ++Values.deletedLetters);
+            FZSave.Int.Set("deletedLetters", ++Values.deletedLetters);
 
             Logic.currentFinalKey.Unhighlight();
+
             Logic.currentFinalKey = selectedKey;
-            selectedKey.Highlight();
+            Logic.currentFinalKey.Highlight();
         }
         else
         {
-            PlayerPrefs.SetInt("pressedKeys", ++Values.pressedKeys);
+            FZSave.Int.Set("pressedKeys", ++Values.pressedKeys);
 
             FZAudio.Manager.PlaySound(Sounds.Instance.keyPress);
+
             if (!string.IsNullOrEmpty(Logic.currentFinalKey.value))
             {
-                Logic.currentFinalKey.fromKey.Selected(false);
+                Logic.currentFinalKey.fromKey.GetComponent<FZButton>().interactable = true;
             }
+            selectedKey.GetComponent<FZButton>().interactable = false;
+
             Logic.currentFinalKey.value = selectedKey.value;
             Logic.currentFinalKey.isCorrect = Logic.currentFinalKey.value == Logic.currentFinalKey.neededValue;
             Logic.currentFinalKey.fromKey = selectedKey;
             Logic.currentFinalKey.RefreshUI();
 
-            selectedKey.Selected(true);
 
             var nextKey = GetNextFinalKey();
             if (nextKey == null)
@@ -70,27 +83,19 @@ public class Key : MonoBehaviour
         }
     }
 
-    public void Highlight()
+    public static Key GetNextFinalKey(bool fromStart = false)
     {
-        GetComponent<RectTransform>().sizeDelta = keyZoomSize;
-    }
+        if (fromStart)
+        {
+            for (int i = 0; i < Logic.Instance.FinalKeys.Count; i++)
+            {
+                if (string.IsNullOrEmpty(Logic.Instance.FinalKeys[i].value))
+                {
+                    return Logic.Instance.FinalKeys[i];
+                }
+            }
+        }
 
-    public void Unhighlight()
-    {
-        GetComponent<RectTransform>().sizeDelta = keySize;
-    }
-
-    public void Selected(bool value)
-    {
-        if (value)
-            GetComponent<FZButton>().interactable = false;
-        else
-            GetComponent<FZButton>().interactable = true;
-
-    }
-
-    private Key GetNextFinalKey()
-    {
         // x -> final
         for (int i = Logic.currentFinalKey.ID + 1; i < Logic.Instance.FinalKeys.Count; i++)
         {
@@ -99,6 +104,7 @@ public class Key : MonoBehaviour
                 return Logic.Instance.FinalKeys[i];
             }
         }
+
 
         // @ 0 -> x
         for (int i = 0; i < Logic.currentFinalKey.ID; i++)
@@ -112,7 +118,7 @@ public class Key : MonoBehaviour
         return null;
     }
 
-    private void CheckWord()
+    public static void CheckWord()
     {
         bool correct = true;
         foreach (var key in Logic.Instance.FinalKeys)
